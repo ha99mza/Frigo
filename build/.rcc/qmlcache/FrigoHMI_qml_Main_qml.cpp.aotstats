@@ -882,7 +882,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 324,
+                            "line": 329,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -890,7 +890,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 323,
+                            "line": 328,
                             "message": ""
                         },
                         {
@@ -898,7 +898,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "running",
-                            "line": 331,
+                            "line": 334,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -906,15 +906,47 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "loops",
-                            "line": 332,
+                            "line": 335,
                             "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 30,
+                            "durationMicroseconds": 1000,
+                            "functionName": "opacity",
+                            "line": 349,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 344,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "margins",
+                            "line": 345,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 348,
+                            "message": "Cannot access value for name alarmHalo"
                         },
                         {
                             "codegenResult": 2,
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 341,
+                            "line": 357,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -922,7 +954,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 342,
+                            "line": 358,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant"
                         },
                         {
@@ -930,7 +962,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 340,
+                            "line": 356,
                             "message": ""
                         },
                         {
@@ -938,7 +970,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 345,
+                            "line": 361,
                             "message": ""
                         },
                         {
@@ -946,68 +978,12 @@
                             "column": 25,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 349,
+                            "line": 365,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 352,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "centerIn",
-                            "line": 350,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 353,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "fill",
-                            "line": 358,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 63,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 364,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 86,
-                            "durationMicroseconds": 0,
-                            "functionName": "family",
-                            "line": 364,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 131,
-                            "durationMicroseconds": 0,
-                            "functionName": "weight",
-                            "line": 364,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
                             "line": 368,
@@ -1015,55 +991,55 @@
                         },
                         {
                             "codegenResult": 0,
-                            "column": 42,
+                            "column": 35,
                             "durationMicroseconds": 0,
-                            "functionName": "family",
+                            "functionName": "centerIn",
+                            "line": 366,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
                             "line": 369,
                             "message": ""
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 95,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 371,
-                            "message": "Cannot retrieve a non-object type by ID: window"
-                        },
-                        {
                             "codegenResult": 0,
-                            "column": 55,
+                            "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 371,
+                            "line": 374,
                             "message": ""
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 375,
-                            "message": "Cannot retrieve a non-object type by ID: window"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
+                            "codegenResult": 0,
+                            "column": 63,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 376,
-                            "message": "Cannot retrieve a non-object type by ID: window"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "family",
-                            "line": 377,
+                            "line": 380,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 32,
+                            "column": 86,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 380,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 131,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 380,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
                             "line": 384,
@@ -1071,10 +1047,66 @@
                         },
                         {
                             "codegenResult": 0,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 385,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 95,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 387,
+                            "message": "Cannot retrieve a non-object type by ID: window"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 55,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 387,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 391,
+                            "message": "Cannot retrieve a non-object type by ID: window"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 392,
+                            "message": "Cannot retrieve a non-object type by ID: window"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 393,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 400,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 385,
+                            "line": 401,
                             "message": ""
                         },
                         {
@@ -1082,7 +1114,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 389,
+                            "line": 405,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1090,7 +1122,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 393,
+                            "line": 409,
                             "message": ""
                         },
                         {
@@ -1098,7 +1130,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 388,
+                            "line": 404,
                             "message": ""
                         },
                         {
@@ -1106,7 +1138,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 390,
+                            "line": 406,
                             "message": ""
                         },
                         {
@@ -1114,7 +1146,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "keyBg",
-                            "line": 399,
+                            "line": 415,
                             "message": ""
                         },
                         {
@@ -1122,7 +1154,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onKeyPressed",
-                            "line": 401,
+                            "line": 417,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1130,7 +1162,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onKeyPressed",
-                            "line": 401,
+                            "line": 417,
                             "message": ""
                         },
                         {
@@ -1138,7 +1170,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 410,
+                            "line": 426,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1146,7 +1178,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 411,
+                            "line": 427,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant"
                         },
                         {
@@ -1154,7 +1186,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 409,
+                            "line": 425,
                             "message": ""
                         },
                         {
@@ -1162,7 +1194,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 414,
+                            "line": 430,
                             "message": ""
                         },
                         {
@@ -1170,7 +1202,7 @@
                             "column": 25,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 418,
+                            "line": 434,
                             "message": ""
                         },
                         {
@@ -1178,7 +1210,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 421,
+                            "line": 437,
                             "message": ""
                         },
                         {
@@ -1186,7 +1218,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 419,
+                            "line": 435,
                             "message": ""
                         },
                         {
@@ -1194,7 +1226,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 422,
+                            "line": 438,
                             "message": ""
                         },
                         {
@@ -1202,7 +1234,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 427,
+                            "line": 443,
                             "message": ""
                         },
                         {
@@ -1210,7 +1242,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 433,
+                            "line": 449,
                             "message": ""
                         },
                         {
@@ -1218,7 +1250,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 434,
+                            "line": 450,
                             "message": ""
                         },
                         {
@@ -1226,7 +1258,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 436,
+                            "line": 452,
                             "message": ""
                         },
                         {
@@ -1234,7 +1266,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 440,
+                            "line": 456,
                             "message": ""
                         },
                         {
@@ -1242,7 +1274,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 443,
+                            "line": 459,
                             "message": ""
                         },
                         {
@@ -1250,7 +1282,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 441,
+                            "line": 457,
                             "message": ""
                         },
                         {
@@ -1258,7 +1290,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 454,
+                            "line": 470,
                             "message": ""
                         },
                         {
@@ -1266,7 +1298,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 459,
+                            "line": 475,
                             "message": ""
                         },
                         {
@@ -1274,7 +1306,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 457,
+                            "line": 473,
                             "message": ""
                         },
                         {
@@ -1282,7 +1314,7 @@
                             "column": 46,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 460,
+                            "line": 476,
                             "message": ""
                         },
                         {
@@ -1290,7 +1322,7 @@
                             "column": 46,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 462,
+                            "line": 478,
                             "message": ""
                         },
                         {
@@ -1298,7 +1330,7 @@
                             "column": 74,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 464,
+                            "line": 480,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1306,7 +1338,7 @@
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 464,
+                            "line": 480,
                             "message": ""
                         },
                         {
@@ -1314,7 +1346,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 470,
+                            "line": 486,
                             "message": ""
                         },
                         {
@@ -1322,7 +1354,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 472,
+                            "line": 488,
                             "message": ""
                         },
                         {
@@ -1330,7 +1362,7 @@
                             "column": 46,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 475,
+                            "line": 491,
                             "message": ""
                         },
                         {
@@ -1338,7 +1370,7 @@
                             "column": 46,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 477,
+                            "line": 493,
                             "message": ""
                         },
                         {
@@ -1346,7 +1378,7 @@
                             "column": 74,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 479,
+                            "line": 495,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1354,7 +1386,7 @@
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 479,
+                            "line": 495,
                             "message": ""
                         }
                     ],

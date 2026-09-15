@@ -325,6 +325,7 @@ C:/Users/hlwad/Desktop/Frigo/src/canbackend.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI_autogen/moc_predefs.h
  mdp:C:/Users/hlwad/Desktop/Frigo/src/canbackend.h
+C:/Users/hlwad/Desktop/Frigo/src/canprotocol.h
 C:/Users/hlwad/Desktop/Frigo/src/cansimulator.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.11.2/mingw_64/include/QtCore/QHash
@@ -660,7 +661,6 @@ C:/Users/hlwad/Desktop/Frigo/src/cansimulator.h
  mdp:C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI_autogen/moc_predefs.h
  mdp:C:/Users/hlwad/Desktop/Frigo/src/canbackend.h
  mdp:C:/Users/hlwad/Desktop/Frigo/src/cansimulator.h
-C:/Users/hlwad/Desktop/Frigo/src/canprotocol.h
 C:/Users/hlwad/Desktop/Frigo/src/errorlogmodel.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.11.2/mingw_64/include/QtCore/QAbstractListModel
@@ -1004,9 +1004,8 @@ C:/Users/hlwad/Desktop/Frigo/src/errorlogmodel.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI_autogen/moc_predefs.h
  mdp:C:/Users/hlwad/Desktop/Frigo/src/errorlogmodel.h
-C:/Users/hlwad/Desktop/Frigo/src/canprotocol.cpp
 C:/Users/hlwad/Desktop/Frigo/src/frigoconfig.h
-C:/Users/hlwad/Desktop/Frigo/src/canbackend.cpp
+C:/Users/hlwad/Desktop/Frigo/src/canprotocol.cpp
 C:/Users/hlwad/Desktop/Frigo/src/frigocontroller.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.11.2/mingw_64/include/QtCore/QAbstractListModel
@@ -1379,6 +1378,7 @@ C:/Users/hlwad/Desktop/Frigo/src/frigocontroller.h
  mdp:C:/Users/hlwad/Desktop/Frigo/src/frigoconfig.h
  mdp:C:/Users/hlwad/Desktop/Frigo/src/frigocontroller.h
  mdp:C:/Users/hlwad/Desktop/Frigo/src/historystore.h
+C:/Users/hlwad/Desktop/Frigo/src/canbackend.cpp
 C:/Users/hlwad/Desktop/Frigo/src/cansimulator.cpp
 C:/Users/hlwad/Desktop/Frigo/src/errorlogmodel.cpp
 C:/Users/hlwad/Desktop/Frigo/src/frigoconfig.cpp

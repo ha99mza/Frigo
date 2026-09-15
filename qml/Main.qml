@@ -319,19 +319,35 @@ ApplicationWindow {
         }
 
         // --- Alarm edge overlay --------------------------------------------
-        Rectangle {
+        // A wide, soft-looking halo rather than a hard border: QML's
+        // Rectangle has no native glow/blur, so this stacks several inset,
+        // low-opacity rings that blend into a glow radiating inward from
+        // the screen edges (pulsing, same as before).
+        Item {
+            id: alarmHalo
             anchors.fill: parent
             visible: window.hasAlarm
-            color: "transparent"
-            border.width: 8
-            border.color: "#ef4444"
             z: 40
 
-            SequentialAnimation on border.color {
+            property color glowColor: "#ef4444"
+            SequentialAnimation on glowColor {
                 running: window.hasAlarm
                 loops: Animation.Infinite
                 ColorAnimation { from: "#ef4444"; to: "#7f1d1d"; duration: 550 }
                 ColorAnimation { from: "#7f1d1d"; to: "#ef4444"; duration: 550 }
+            }
+
+            Repeater {
+                model: 7
+                delegate: Rectangle {
+                    required property int index
+                    anchors.fill: parent
+                    anchors.margins: index * 14
+                    color: "transparent"
+                    border.width: 18
+                    border.color: alarmHalo.glowColor
+                    opacity: 0.5 - index * 0.06
+                }
             }
         }
 
