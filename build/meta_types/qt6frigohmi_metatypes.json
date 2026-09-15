@@ -1,0 +1,1376 @@
+[
+    {
+        "classes": [
+            {
+                "className": "ICanTransport",
+                "lineNumber": 12,
+                "object": true,
+                "qualifiedClassName": "ICanTransport",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "frame",
+                                "type": "QCanBusFrame"
+                            }
+                        ],
+                        "index": 0,
+                        "lineNumber": 25,
+                        "name": "frameReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "message",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 26,
+                        "name": "errorOccurred",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "connected",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 2,
+                        "lineNumber": 27,
+                        "name": "connectionStateChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            },
+            {
+                "className": "CanBackend",
+                "lineNumber": 37,
+                "object": true,
+                "qualifiedClassName": "CanBackend",
+                "slots": [
+                    {
+                        "access": "private",
+                        "index": 0,
+                        "lineNumber": 62,
+                        "name": "onFramesReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QCanBusDevice::CanBusError"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 63,
+                        "name": "onDeviceError",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "ICanTransport"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "canbackend.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "CanSimulator",
+                "lineNumber": 13,
+                "object": true,
+                "qualifiedClassName": "CanSimulator",
+                "slots": [
+                    {
+                        "access": "private",
+                        "index": 0,
+                        "lineNumber": 25,
+                        "name": "tick",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "ICanTransport"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "cansimulator.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "ErrorLogModel",
+                "enums": [
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "lineNumber": 13,
+                        "name": "Roles",
+                        "values": [
+                            "CodeRole",
+                            "DescriptionRole",
+                            "TimestampRole",
+                            "ActiveRole"
+                        ]
+                    }
+                ],
+                "lineNumber": 9,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "code",
+                                "type": "quint8"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 28,
+                        "name": "addError",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "lineNumber": 30,
+                        "name": "clearActive",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "code",
+                                "type": "quint8"
+                            }
+                        ],
+                        "index": 3,
+                        "lineNumber": 33,
+                        "name": "clearActiveByCode",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "lineNumber": 35,
+                        "name": "clearAllActive",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "lineNumber": 36,
+                        "name": "clearAll",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "lineNumber": 38,
+                        "name": "activeCount",
+                        "notify": "activeCountChanged",
+                        "override": false,
+                        "read": "activeCount",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "lineNumber": 43,
+                        "name": "topActiveSummary",
+                        "notify": "activeCountChanged",
+                        "override": false,
+                        "read": "topActiveSummary",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "virtual": false
+                    }
+                ],
+                "qualifiedClassName": "ErrorLogModel",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 47,
+                        "name": "activeCountChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "errorlogmodel.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "FrigoController",
+                "lineNumber": 20,
+                "methods": [
+                    {
+                        "access": "public",
+                        "index": 23,
+                        "lineNumber": 145,
+                        "name": "requestConfigFromBoard",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 24,
+                        "lineNumber": 146,
+                        "name": "writeConfigToBoard",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 25,
+                        "lineNumber": 147,
+                        "name": "verifySignature",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 26,
+                        "lineNumber": 149,
+                        "name": "acknowledgeDoorAlarm",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 27,
+                        "lineNumber": 154,
+                        "name": "acknowledgeAllAlarms",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "on",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 28,
+                        "lineNumber": 158,
+                        "name": "commandMaintenanceMode",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 29,
+                        "lineNumber": 162,
+                        "name": "toggleFanOverride",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "key",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 30,
+                        "lineNumber": 163,
+                        "name": "toggleRelayOverride",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "pin",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 31,
+                        "lineNumber": 166,
+                        "name": "tryUnlockSettings",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 32,
+                        "lineNumber": 167,
+                        "name": "lockSettings",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "newPin",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 33,
+                        "lineNumber": 170,
+                        "name": "changeSettingsPin",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "range",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 34,
+                        "isConst": true,
+                        "lineNumber": 173,
+                        "name": "temperatureSeries",
+                        "returnType": "QVariantList"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "range",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 35,
+                        "isConst": true,
+                        "lineNumber": 174,
+                        "name": "rangeStats",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "index": 36,
+                        "isConst": true,
+                        "lineNumber": 175,
+                        "name": "lastDefrostEvent",
+                        "returnType": "qint64"
+                    },
+                    {
+                        "access": "public",
+                        "index": 37,
+                        "lineNumber": 181,
+                        "name": "disconnectCan",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "lineNumber": 25,
+                        "name": "connected",
+                        "notify": "connectedChanged",
+                        "override": false,
+                        "read": "connected",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "lineNumber": 26,
+                        "name": "lastError",
+                        "notify": "lastErrorChanged",
+                        "override": false,
+                        "read": "lastError",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "lineNumber": 27,
+                        "name": "backendLabel",
+                        "notify": "backendLabelChanged",
+                        "override": false,
+                        "read": "backendLabel",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 3,
+                        "lineNumber": 30,
+                        "name": "temp1",
+                        "notify": "temp1Changed",
+                        "override": false,
+                        "read": "temp1",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 4,
+                        "lineNumber": 31,
+                        "name": "temp2",
+                        "notify": "temp2Changed",
+                        "override": false,
+                        "read": "temp2",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 5,
+                        "lineNumber": 32,
+                        "name": "temp3",
+                        "notify": "temp3Changed",
+                        "override": false,
+                        "read": "temp3",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 6,
+                        "lineNumber": 33,
+                        "name": "tempEva",
+                        "notify": "tempEvaChanged",
+                        "override": false,
+                        "read": "tempEva",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 7,
+                        "lineNumber": 34,
+                        "name": "tempAverage",
+                        "notify": "tempAverageChanged",
+                        "override": false,
+                        "read": "tempAverage",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 8,
+                        "lineNumber": 35,
+                        "name": "batteryVoltage",
+                        "notify": "batteryVoltageChanged",
+                        "override": false,
+                        "read": "batteryVoltage",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 9,
+                        "lineNumber": 36,
+                        "name": "doorOpen",
+                        "notify": "doorOpenChanged",
+                        "override": false,
+                        "read": "doorOpen",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 10,
+                        "lineNumber": 38,
+                        "name": "fan1On",
+                        "notify": "relaysChanged",
+                        "override": false,
+                        "read": "fan1On",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 11,
+                        "lineNumber": 39,
+                        "name": "fan2On",
+                        "notify": "relaysChanged",
+                        "override": false,
+                        "read": "fan2On",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 12,
+                        "lineNumber": 40,
+                        "name": "fan3On",
+                        "notify": "relaysChanged",
+                        "override": false,
+                        "read": "fan3On",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 13,
+                        "lineNumber": 41,
+                        "name": "fan4On",
+                        "notify": "relaysChanged",
+                        "override": false,
+                        "read": "fan4On",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 14,
+                        "lineNumber": 42,
+                        "name": "fan5On",
+                        "notify": "relaysChanged",
+                        "override": false,
+                        "read": "fan5On",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 15,
+                        "lineNumber": 43,
+                        "name": "lampOn",
+                        "notify": "relaysChanged",
+                        "override": false,
+                        "read": "lampOn",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 16,
+                        "lineNumber": 44,
+                        "name": "compressorOn",
+                        "notify": "relaysChanged",
+                        "override": false,
+                        "read": "compressorOn",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 17,
+                        "lineNumber": 45,
+                        "name": "defrostFanOn",
+                        "notify": "relaysChanged",
+                        "override": false,
+                        "read": "defrostFanOn",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 18,
+                        "lineNumber": 46,
+                        "name": "doorRelayOn",
+                        "notify": "relaysChanged",
+                        "override": false,
+                        "read": "doorRelayOn",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 19,
+                        "lineNumber": 49,
+                        "name": "tempMinC",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "tempMinC",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setTempMinC"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 20,
+                        "lineNumber": 50,
+                        "name": "tempMaxC",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "tempMaxC",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setTempMaxC"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 21,
+                        "lineNumber": 51,
+                        "name": "tempEvaMinC",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "tempEvaMinC",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setTempEvaMinC"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 22,
+                        "lineNumber": 52,
+                        "name": "defrostIntervalHours",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "defrostIntervalHours",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setDefrostIntervalHours"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 23,
+                        "lineNumber": 53,
+                        "name": "defrostDurationMinutes",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "defrostDurationMinutes",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setDefrostDurationMinutes"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 24,
+                        "lineNumber": 54,
+                        "name": "defrostTimeoutMinutes",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "defrostTimeoutMinutes",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setDefrostTimeoutMinutes"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 25,
+                        "lineNumber": 55,
+                        "name": "antiShortCycleDelayMinutes",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "antiShortCycleDelayMinutes",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setAntiShortCycleDelayMinutes"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 26,
+                        "lineNumber": 56,
+                        "name": "tempLimitTimeoutMinutes",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "tempLimitTimeoutMinutes",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setTempLimitTimeoutMinutes"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 27,
+                        "lineNumber": 57,
+                        "name": "doorAlarmDelaySeconds",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "doorAlarmDelaySeconds",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setDoorAlarmDelaySeconds"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 28,
+                        "lineNumber": 58,
+                        "name": "offsetCap1C",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "offsetCap1C",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setOffsetCap1C"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 29,
+                        "lineNumber": 59,
+                        "name": "offsetCap2C",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "offsetCap2C",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setOffsetCap2C"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 30,
+                        "lineNumber": 60,
+                        "name": "offsetCap3C",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "offsetCap3C",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setOffsetCap3C"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 31,
+                        "lineNumber": 61,
+                        "name": "offsetEvaC",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "offsetEvaC",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "double",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setOffsetEvaC"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 32,
+                        "lineNumber": 62,
+                        "name": "maintenanceMode",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "maintenanceMode",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 33,
+                        "lineNumber": 64,
+                        "name": "configDirty",
+                        "notify": "configDirtyChanged",
+                        "override": false,
+                        "read": "configDirty",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 34,
+                        "lineNumber": 65,
+                        "name": "configSynced",
+                        "notify": "configSyncedChanged",
+                        "override": false,
+                        "read": "configSynced",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 35,
+                        "lineNumber": 66,
+                        "name": "localSignature",
+                        "notify": "configChanged",
+                        "override": false,
+                        "read": "localSignature",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 36,
+                        "lineNumber": 67,
+                        "name": "boardSignature",
+                        "notify": "boardSignatureChanged",
+                        "override": false,
+                        "read": "boardSignature",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 37,
+                        "lineNumber": 69,
+                        "name": "errorLog",
+                        "override": false,
+                        "read": "errorLog",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "ErrorLogModel*",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 38,
+                        "lineNumber": 72,
+                        "name": "darkTheme",
+                        "notify": "darkThemeChanged",
+                        "override": false,
+                        "read": "darkTheme",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setDarkTheme"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 39,
+                        "lineNumber": 73,
+                        "name": "unitName",
+                        "notify": "unitNameChanged",
+                        "override": false,
+                        "read": "unitName",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setUnitName"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 40,
+                        "lineNumber": 74,
+                        "name": "settingsUnlocked",
+                        "notify": "settingsUnlockedChanged",
+                        "override": false,
+                        "read": "settingsUnlocked",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    }
+                ],
+                "qualifiedClassName": "FrigoController",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 184,
+                        "name": "connectedChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "lineNumber": 185,
+                        "name": "lastErrorChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "lineNumber": 186,
+                        "name": "backendLabelChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 3,
+                        "lineNumber": 188,
+                        "name": "temp1Changed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "lineNumber": 189,
+                        "name": "temp2Changed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "lineNumber": 190,
+                        "name": "temp3Changed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "lineNumber": 191,
+                        "name": "tempEvaChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 7,
+                        "lineNumber": 192,
+                        "name": "tempAverageChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 8,
+                        "lineNumber": 193,
+                        "name": "batteryVoltageChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 9,
+                        "lineNumber": 194,
+                        "name": "doorOpenChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 10,
+                        "lineNumber": 195,
+                        "name": "relaysChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 11,
+                        "lineNumber": 197,
+                        "name": "configChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 12,
+                        "lineNumber": 198,
+                        "name": "configDirtyChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 13,
+                        "lineNumber": 199,
+                        "name": "configSyncedChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 14,
+                        "lineNumber": 200,
+                        "name": "boardSignatureChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 15,
+                        "lineNumber": 202,
+                        "name": "darkThemeChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 16,
+                        "lineNumber": 203,
+                        "name": "unitNameChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 17,
+                        "lineNumber": 204,
+                        "name": "settingsUnlockedChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "code",
+                                "type": "quint8"
+                            }
+                        ],
+                        "index": 18,
+                        "lineNumber": 206,
+                        "name": "errorReceived",
+                        "returnType": "void"
+                    }
+                ],
+                "slots": [
+                    {
+                        "access": "private",
+                        "arguments": [
+                            {
+                                "name": "frame",
+                                "type": "QCanBusFrame"
+                            }
+                        ],
+                        "index": 19,
+                        "lineNumber": 209,
+                        "name": "onFrameReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "arguments": [
+                            {
+                                "name": "message",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 20,
+                        "lineNumber": 210,
+                        "name": "onTransportError",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "arguments": [
+                            {
+                                "name": "connected",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 21,
+                        "lineNumber": 211,
+                        "name": "onTransportConnectionChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "private",
+                        "index": 22,
+                        "lineNumber": 212,
+                        "name": "onHistoryTick",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "frigocontroller.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "HistoryStore",
+                "lineNumber": 13,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "range",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "isConst": true,
+                        "lineNumber": 29,
+                        "name": "temperatureSeries",
+                        "returnType": "QVariantList"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "range",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "isConst": true,
+                        "lineNumber": 33,
+                        "name": "rangeStats",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "isConst": true,
+                        "lineNumber": 37,
+                        "name": "lastDefrostEvent",
+                        "returnType": "qint64"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "HistoryStore",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "historystore.h",
+        "outputRevision": 69
+    }
+]

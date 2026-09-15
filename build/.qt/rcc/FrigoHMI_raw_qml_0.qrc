@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/qt/qml/FrigoHMI/">
+    <file alias="qml/Main.qml">C:/Users/hlwad/Desktop/Frigo/qml/Main.qml</file>
+    <file alias="qml/TempPage.qml">C:/Users/hlwad/Desktop/Frigo/qml/TempPage.qml</file>
+    <file alias="qml/HistPage.qml">C:/Users/hlwad/Desktop/Frigo/qml/HistPage.qml</file>
+    <file alias="qml/AlarmsPage.qml">C:/Users/hlwad/Desktop/Frigo/qml/AlarmsPage.qml</file>
+    <file alias="qml/SettingsPage.qml">C:/Users/hlwad/Desktop/Frigo/qml/SettingsPage.qml</file>
+    <file alias="qml/MaintenancePage.qml">C:/Users/hlwad/Desktop/Frigo/qml/MaintenancePage.qml</file>
+    <file alias="qml/components/NumPad.qml">C:/Users/hlwad/Desktop/Frigo/qml/components/NumPad.qml</file>
+    <file alias="qml/components/TempChart.qml">C:/Users/hlwad/Desktop/Frigo/qml/components/TempChart.qml</file>
+    <file alias="qml/components/SettingsRow.qml">C:/Users/hlwad/Desktop/Frigo/qml/components/SettingsRow.qml</file>
+  </qresource>
+</RCC>
+

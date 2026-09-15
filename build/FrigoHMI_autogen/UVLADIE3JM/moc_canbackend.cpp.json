@@ -1,0 +1,93 @@
+{
+    "classes": [
+        {
+            "className": "ICanTransport",
+            "lineNumber": 12,
+            "object": true,
+            "qualifiedClassName": "ICanTransport",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "frame",
+                            "type": "QCanBusFrame"
+                        }
+                    ],
+                    "index": 0,
+                    "lineNumber": 25,
+                    "name": "frameReceived",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "message",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 26,
+                    "name": "errorOccurred",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "connected",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 27,
+                    "name": "connectionStateChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "CanBackend",
+            "lineNumber": 37,
+            "object": true,
+            "qualifiedClassName": "CanBackend",
+            "slots": [
+                {
+                    "access": "private",
+                    "index": 0,
+                    "lineNumber": 62,
+                    "name": "onFramesReceived",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "error",
+                            "type": "QCanBusDevice::CanBusError"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 63,
+                    "name": "onDeviceError",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "ICanTransport"
+                }
+            ]
+        }
+    ],
+    "inputFile": "canbackend.h",
+    "outputRevision": 69
+}

@@ -1,0 +1,27 @@
+{
+    "classes": [
+        {
+            "className": "CanSimulator",
+            "lineNumber": 13,
+            "object": true,
+            "qualifiedClassName": "CanSimulator",
+            "slots": [
+                {
+                    "access": "private",
+                    "index": 0,
+                    "lineNumber": 25,
+                    "name": "tick",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "ICanTransport"
+                }
+            ]
+        }
+    ],
+    "inputFile": "cansimulator.h",
+    "outputRevision": 69
+}

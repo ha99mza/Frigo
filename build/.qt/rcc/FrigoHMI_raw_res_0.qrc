@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/FrigoHMI/">
+    <file alias="resources/qtquickcontrols2.conf">C:/Users/hlwad/Desktop/Frigo/resources/qtquickcontrols2.conf</file>
+  </qresource>
+</RCC>
+

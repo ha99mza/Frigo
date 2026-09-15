@@ -1,0 +1,126 @@
+{
+    "classes": [
+        {
+            "className": "ErrorLogModel",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "lineNumber": 13,
+                    "name": "Roles",
+                    "values": [
+                        "CodeRole",
+                        "DescriptionRole",
+                        "TimestampRole",
+                        "ActiveRole"
+                    ]
+                }
+            ],
+            "lineNumber": 9,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "code",
+                            "type": "quint8"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 28,
+                    "name": "addError",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "lineNumber": 30,
+                    "name": "clearActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "code",
+                            "type": "quint8"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 33,
+                    "name": "clearActiveByCode",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "lineNumber": 35,
+                    "name": "clearAllActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "lineNumber": 36,
+                    "name": "clearAll",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 38,
+                    "name": "activeCount",
+                    "notify": "activeCountChanged",
+                    "override": false,
+                    "read": "activeCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 43,
+                    "name": "topActiveSummary",
+                    "notify": "activeCountChanged",
+                    "override": false,
+                    "read": "topActiveSummary",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                }
+            ],
+            "qualifiedClassName": "ErrorLogModel",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 47,
+                    "name": "activeCountChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "errorlogmodel.h",
+    "outputRevision": 69
+}

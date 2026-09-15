@@ -1,0 +1,56 @@
+{
+    "classes": [
+        {
+            "className": "HistoryStore",
+            "lineNumber": 13,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "range",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "isConst": true,
+                    "lineNumber": 29,
+                    "name": "temperatureSeries",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "range",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "isConst": true,
+                    "lineNumber": 33,
+                    "name": "rangeStats",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "isConst": true,
+                    "lineNumber": 37,
+                    "name": "lastDefrostEvent",
+                    "returnType": "qint64"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "HistoryStore",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "historystore.h",
+    "outputRevision": 69
+}

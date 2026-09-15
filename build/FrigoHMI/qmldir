@@ -1,0 +1,14 @@
+module FrigoHMI
+typeinfo FrigoHMI.qmltypes
+prefer :/qt/qml/FrigoHMI/
+Main 1.0 qml/Main.qml
+TempPage 1.0 qml/TempPage.qml
+HistPage 1.0 qml/HistPage.qml
+AlarmsPage 1.0 qml/AlarmsPage.qml
+SettingsPage 1.0 qml/SettingsPage.qml
+MaintenancePage 1.0 qml/MaintenancePage.qml
+NumPad 1.0 qml/components/NumPad.qml
+TempChart 1.0 qml/components/TempChart.qml
+SettingsRow 1.0 qml/components/SettingsRow.qml
+depends QtQuick
+
