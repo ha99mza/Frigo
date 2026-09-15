@@ -1135,9 +1135,6 @@
 		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
 		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
-		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
-		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
-		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"C:/Program Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake",
 		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
 		"C:/Users/hlwad/Desktop/Frigo/build/.qt/qml_imports/FrigoHMI_conf.cmake",
@@ -1271,7 +1268,6 @@
 	"MOC_SKIP" : 
 	[
 		"C:/Users/hlwad/Desktop/Frigo/build/.qt/rcc/qrc_FrigoHMI_raw_qml_0.cpp",
-		"C:/Users/hlwad/Desktop/Frigo/build/.qt/rcc/qrc_FrigoHMI_raw_qml_0_extra_qmldirs.cpp",
 		"C:/Users/hlwad/Desktop/Frigo/build/.qt/rcc/qrc_FrigoHMI_raw_res_0.cpp",
 		"C:/Users/hlwad/Desktop/Frigo/build/.qt/rcc/qrc_qmake_FrigoHMI.cpp",
 		"C:/Users/hlwad/Desktop/Frigo/build/.rcc/qmlcache/FrigoHMI_qml_AlarmsPage_qml.cpp",
@@ -1310,7 +1306,6 @@
 	"UIC_SKIP" : 
 	[
 		"C:/Users/hlwad/Desktop/Frigo/build/.qt/rcc/qrc_FrigoHMI_raw_qml_0.cpp",
-		"C:/Users/hlwad/Desktop/Frigo/build/.qt/rcc/qrc_FrigoHMI_raw_qml_0_extra_qmldirs.cpp",
 		"C:/Users/hlwad/Desktop/Frigo/build/.qt/rcc/qrc_FrigoHMI_raw_res_0.cpp",
 		"C:/Users/hlwad/Desktop/Frigo/build/.qt/rcc/qrc_qmake_FrigoHMI.cpp",
 		"C:/Users/hlwad/Desktop/Frigo/build/.rcc/qmlcache/FrigoHMI_qml_AlarmsPage_qml.cpp",

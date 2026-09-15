@@ -1,4 +1,4 @@
-// /qt/qml/FrigoHMI/qml/components/TempChart.qml
+// /FrigoHMI/qml/components/TempChart.qml
 #include <QtQml/qqmlprivate.h>
 #include <QtCore/qalgorithms.h>
 #include <QtCore/qdatetime.h>
@@ -20,7 +20,7 @@
 #include <limits>
 #include <type_traits>
 namespace QmlCacheGeneratedCode {
-namespace _qt_qml_FrigoHMI_qml_components_TempChart_qml {
+namespace _0x5f_FrigoHMI_qml_components_TempChart_qml {
 extern const unsigned char qmlData alignas(16) [];
 extern const unsigned char qmlData alignas(16) [] = {
 

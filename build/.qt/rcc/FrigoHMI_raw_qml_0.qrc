@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="/qt/qml/FrigoHMI/">
+  <qresource prefix="/FrigoHMI/">
     <file alias="qml/Main.qml">C:/Users/hlwad/Desktop/Frigo/qml/Main.qml</file>
     <file alias="qml/TempPage.qml">C:/Users/hlwad/Desktop/Frigo/qml/TempPage.qml</file>
     <file alias="qml/HistPage.qml">C:/Users/hlwad/Desktop/Frigo/qml/HistPage.qml</file>

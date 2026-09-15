@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="/qt/qml/FrigoHMI">
+  <qresource prefix="/FrigoHMI">
     <file alias="qmldir">C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI/qmldir</file>
   </qresource>
 </RCC>

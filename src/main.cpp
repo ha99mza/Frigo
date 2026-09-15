@@ -35,10 +35,24 @@ int main(int argc, char *argv[])
     FrigoController frigo;
     engine.rootContext()->setContextProperty(QStringLiteral("frigo"), &frigo);
 
+    // objectCreationFailed() and loadFromModule() are Qt 6.4/6.5+ only; the
+    // target board ships Qt 6.2 (LTS), so fall back to the older equivalents
+    // there while still using the nicer API on newer Qt.
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
                       &app, [] { QCoreApplication::exit(-1); }, Qt::QueuedConnection);
+#else
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+                      &app, [](QObject *obj, const QUrl &) {
+                          if (!obj) QCoreApplication::exit(-1);
+                      }, Qt::QueuedConnection);
+#endif
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
     engine.loadFromModule("FrigoHMI", "Main");
+#else
+    engine.load(QUrl(QStringLiteral("qrc:/qt/qml/FrigoHMI/qml/Main.qml")));
+#endif
 
     // Auto-connect to the CAN bus — this design has no on-screen connection
     // picker, so the interface is fixed per-platform (or overridden via CLI

@@ -1,4 +1,4 @@
-// /qt/qml/FrigoHMI/qml/components/SettingsRow.qml
+// /FrigoHMI/qml/components/SettingsRow.qml
 #include <QtQml/qqmlprivate.h>
 #include <QtCore/qdatetime.h>
 #include <QtCore/qobject.h>
@@ -16,7 +16,7 @@
 #include <QtQml/qqmllist.h>
 #include <type_traits>
 namespace QmlCacheGeneratedCode {
-namespace _qt_qml_FrigoHMI_qml_components_SettingsRow_qml {
+namespace _0x5f_FrigoHMI_qml_components_SettingsRow_qml {
 extern const unsigned char qmlData alignas(16) [];
 extern const unsigned char qmlData alignas(16) [] = {
 

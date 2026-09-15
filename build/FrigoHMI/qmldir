@@ -1,6 +1,6 @@
 module FrigoHMI
 typeinfo FrigoHMI.qmltypes
-prefer :/qt/qml/FrigoHMI/
+prefer :/FrigoHMI/
 Main 1.0 qml/Main.qml
 TempPage 1.0 qml/TempPage.qml
 HistPage 1.0 qml/HistPage.qml

@@ -5,63 +5,63 @@
 #include <QtCore/qstring.h>
 
 namespace QmlCacheGeneratedCode {
-namespace _qt_qml_FrigoHMI_qml_Main_qml { 
+namespace _0x5f_FrigoHMI_qml_Main_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_FrigoHMI_qml_TempPage_qml { 
+namespace _0x5f_FrigoHMI_qml_TempPage_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_FrigoHMI_qml_HistPage_qml { 
+namespace _0x5f_FrigoHMI_qml_HistPage_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_FrigoHMI_qml_AlarmsPage_qml { 
+namespace _0x5f_FrigoHMI_qml_AlarmsPage_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_FrigoHMI_qml_SettingsPage_qml { 
+namespace _0x5f_FrigoHMI_qml_SettingsPage_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_FrigoHMI_qml_MaintenancePage_qml { 
+namespace _0x5f_FrigoHMI_qml_MaintenancePage_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_FrigoHMI_qml_components_NumPad_qml { 
+namespace _0x5f_FrigoHMI_qml_components_NumPad_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_FrigoHMI_qml_components_TempChart_qml { 
+namespace _0x5f_FrigoHMI_qml_components_TempChart_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
-namespace _qt_qml_FrigoHMI_qml_components_SettingsRow_qml { 
+namespace _0x5f_FrigoHMI_qml_components_SettingsRow_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
@@ -82,15 +82,15 @@ Q_GLOBAL_STATIC(Registry, unitRegistry)
 
 
 Registry::Registry() {
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/FrigoHMI/qml/Main.qml"), &QmlCacheGeneratedCode::_qt_qml_FrigoHMI_qml_Main_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/FrigoHMI/qml/TempPage.qml"), &QmlCacheGeneratedCode::_qt_qml_FrigoHMI_qml_TempPage_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/FrigoHMI/qml/HistPage.qml"), &QmlCacheGeneratedCode::_qt_qml_FrigoHMI_qml_HistPage_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/FrigoHMI/qml/AlarmsPage.qml"), &QmlCacheGeneratedCode::_qt_qml_FrigoHMI_qml_AlarmsPage_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/FrigoHMI/qml/SettingsPage.qml"), &QmlCacheGeneratedCode::_qt_qml_FrigoHMI_qml_SettingsPage_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/FrigoHMI/qml/MaintenancePage.qml"), &QmlCacheGeneratedCode::_qt_qml_FrigoHMI_qml_MaintenancePage_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/FrigoHMI/qml/components/NumPad.qml"), &QmlCacheGeneratedCode::_qt_qml_FrigoHMI_qml_components_NumPad_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/FrigoHMI/qml/components/TempChart.qml"), &QmlCacheGeneratedCode::_qt_qml_FrigoHMI_qml_components_TempChart_qml::unit);
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/FrigoHMI/qml/components/SettingsRow.qml"), &QmlCacheGeneratedCode::_qt_qml_FrigoHMI_qml_components_SettingsRow_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/Main.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_Main_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/TempPage.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_TempPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/HistPage.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_HistPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/AlarmsPage.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_AlarmsPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/SettingsPage.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_SettingsPage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/MaintenancePage.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_MaintenancePage_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/components/NumPad.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_components_NumPad_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/components/TempChart.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_components_TempChart_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/components/SettingsRow.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_components_SettingsRow_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

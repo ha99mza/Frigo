@@ -1,4 +1,4 @@
-// /qt/qml/FrigoHMI/qml/Main.qml
+// /FrigoHMI/qml/Main.qml
 #include <QtQml/qqmlprivate.h>
 #include <QtCore/qalgorithms.h>
 #include <QtCore/qdatetime.h>
@@ -20,7 +20,7 @@
 #include <limits>
 #include <type_traits>
 namespace QmlCacheGeneratedCode {
-namespace _qt_qml_FrigoHMI_qml_Main_qml {
+namespace _0x5f_FrigoHMI_qml_Main_qml {
 extern const unsigned char qmlData alignas(16) [];
 extern const unsigned char qmlData alignas(16) [] = {
 

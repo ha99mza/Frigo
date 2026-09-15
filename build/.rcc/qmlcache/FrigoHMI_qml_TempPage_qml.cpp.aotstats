@@ -8,7 +8,7 @@
                         {
                             "codegenResult": 2,
                             "column": 39,
-                            "durationMicroseconds": 2000,
+                            "durationMicroseconds": 3000,
                             "functionName": "theme",
                             "line": 7,
                             "message": "Cannot load property theme from QQuickWindowAttached::window with type QQuickWindow."
@@ -16,7 +16,7 @@
                         {
                             "codegenResult": 2,
                             "column": 40,
-                            "durationMicroseconds": 1000,
+                            "durationMicroseconds": 2000,
                             "functionName": "outOfRange",
                             "line": 9,
                             "message": "Cannot access value for name frigo"
@@ -40,7 +40,7 @@
                         {
                             "codegenResult": 0,
                             "column": 22,
-                            "durationMicroseconds": 1000,
+                            "durationMicroseconds": 4000,
                             "functionName": "onTriggered",
                             "line": 20,
                             "message": ""

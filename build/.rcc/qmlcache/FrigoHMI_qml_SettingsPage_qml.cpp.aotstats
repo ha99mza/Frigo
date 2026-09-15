@@ -624,7 +624,7 @@
                         {
                             "codegenResult": 2,
                             "column": 40,
-                            "durationMicroseconds": 2000,
+                            "durationMicroseconds": 1000,
                             "functionName": "model",
                             "line": 236,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
