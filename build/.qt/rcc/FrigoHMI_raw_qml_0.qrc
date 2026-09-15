@@ -9,6 +9,7 @@
     <file alias="qml/components/NumPad.qml">C:/Users/hlwad/Desktop/Frigo/qml/components/NumPad.qml</file>
     <file alias="qml/components/TempChart.qml">C:/Users/hlwad/Desktop/Frigo/qml/components/TempChart.qml</file>
     <file alias="qml/components/SettingsRow.qml">C:/Users/hlwad/Desktop/Frigo/qml/components/SettingsRow.qml</file>
+    <file alias="qml/components/Keyboard.qml">C:/Users/hlwad/Desktop/Frigo/qml/components/Keyboard.qml</file>
   </qresource>
 </RCC>
 

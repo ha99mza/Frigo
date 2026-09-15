@@ -2,7 +2,7 @@
     "classes": [
         {
             "className": "NetworkManager",
-            "lineNumber": 15,
+            "lineNumber": 16,
             "methods": [
                 {
                     "access": "public",
@@ -12,30 +12,47 @@
                             "type": "bool"
                         }
                     ],
-                    "index": 3,
-                    "lineNumber": 43,
+                    "index": 6,
+                    "lineNumber": 49,
                     "name": "setWifiEnabled",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 4,
-                    "lineNumber": 44,
+                    "index": 7,
+                    "lineNumber": 50,
                     "name": "rescan",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 5,
-                    "lineNumber": 45,
+                    "index": 8,
+                    "lineNumber": 51,
                     "name": "renewIp",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 6,
-                    "lineNumber": 46,
+                    "index": 9,
+                    "lineNumber": 52,
                     "name": "refresh",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ssid",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "password",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 10,
+                    "lineNumber": 54,
+                    "name": "connectToNetwork",
                     "returnType": "void"
                 }
             ],
@@ -46,7 +63,7 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "lineNumber": 18,
+                    "lineNumber": 19,
                     "name": "available",
                     "notify": "availableChanged",
                     "override": false,
@@ -63,7 +80,7 @@
                     "designable": true,
                     "final": false,
                     "index": 1,
-                    "lineNumber": 19,
+                    "lineNumber": 20,
                     "name": "wifiEnabled",
                     "notify": "statusChanged",
                     "override": false,
@@ -80,7 +97,7 @@
                     "designable": true,
                     "final": false,
                     "index": 2,
-                    "lineNumber": 20,
+                    "lineNumber": 21,
                     "name": "wifiConnected",
                     "notify": "statusChanged",
                     "override": false,
@@ -97,7 +114,7 @@
                     "designable": true,
                     "final": false,
                     "index": 3,
-                    "lineNumber": 21,
+                    "lineNumber": 22,
                     "name": "ssid",
                     "notify": "statusChanged",
                     "override": false,
@@ -114,7 +131,7 @@
                     "designable": true,
                     "final": false,
                     "index": 4,
-                    "lineNumber": 22,
+                    "lineNumber": 23,
                     "name": "ipAddress",
                     "notify": "statusChanged",
                     "override": false,
@@ -131,7 +148,7 @@
                     "designable": true,
                     "final": false,
                     "index": 5,
-                    "lineNumber": 23,
+                    "lineNumber": 24,
                     "name": "gateway",
                     "notify": "statusChanged",
                     "override": false,
@@ -148,7 +165,7 @@
                     "designable": true,
                     "final": false,
                     "index": 6,
-                    "lineNumber": 24,
+                    "lineNumber": 25,
                     "name": "subnetMask",
                     "notify": "statusChanged",
                     "override": false,
@@ -165,7 +182,7 @@
                     "designable": true,
                     "final": false,
                     "index": 7,
-                    "lineNumber": 25,
+                    "lineNumber": 26,
                     "name": "macAddress",
                     "notify": "statusChanged",
                     "override": false,
@@ -182,7 +199,7 @@
                     "designable": true,
                     "final": false,
                     "index": 8,
-                    "lineNumber": 26,
+                    "lineNumber": 27,
                     "name": "signalStrength",
                     "notify": "statusChanged",
                     "override": false,
@@ -199,7 +216,7 @@
                     "designable": true,
                     "final": false,
                     "index": 9,
-                    "lineNumber": 27,
+                    "lineNumber": 28,
                     "name": "busy",
                     "notify": "busyChanged",
                     "override": false,
@@ -210,6 +227,40 @@
                     "type": "bool",
                     "user": false,
                     "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 10,
+                    "lineNumber": 29,
+                    "name": "scanning",
+                    "notify": "scanningChanged",
+                    "override": false,
+                    "read": "scanning",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 11,
+                    "lineNumber": 31,
+                    "name": "availableNetworks",
+                    "notify": "availableNetworksChanged",
+                    "override": false,
+                    "read": "availableNetworks",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false,
+                    "virtual": false
                 }
             ],
             "qualifiedClassName": "NetworkManager",
@@ -217,22 +268,53 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 49,
+                    "lineNumber": 57,
                     "name": "availableChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 1,
-                    "lineNumber": 50,
+                    "lineNumber": 58,
                     "name": "statusChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "lineNumber": 51,
+                    "lineNumber": 59,
                     "name": "busyChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "lineNumber": 60,
+                    "name": "scanningChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "lineNumber": 61,
+                    "name": "availableNetworksChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "success",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "message",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 65,
+                    "name": "connectFinished",
                     "returnType": "void"
                 }
             ],

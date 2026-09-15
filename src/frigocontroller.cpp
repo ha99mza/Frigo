@@ -102,7 +102,8 @@ void FrigoController::markConfigDirty()
         emit configSyncedChanged();
     }
     emit configChanged();
-    queueConfigDiff();
+    // Nothing is sent here — edits accumulate locally until the UI confirms
+    // leaving the Réglages page and calls commitConfigChanges().
 }
 
 void FrigoController::setTempMinC(double v)
@@ -466,16 +467,12 @@ void FrigoController::verifySignatureOnConnect()
 {
     if (!m_transport || !m_connected)
         return;
-    QCanBusFrame f(Id_CfgCommitSignature, QByteArray());
-    f.setFrameType(QCanBusFrame::RemoteRequestFrame);
-    m_transport->writeFrame(f);
+    enqueueFrame(Id_CfgCommitSignature, QByteArray(), /*remoteRequest=*/true);
 
     // Not part of the signature scheme (0x30E isn't summed into it), but
     // still worth a fresh read at connect so the UI reflects whatever state
     // the board is actually in right now.
-    QCanBusFrame mf(Id_CfgMaintenanceMode, QByteArray());
-    mf.setFrameType(QCanBusFrame::RemoteRequestFrame);
-    m_transport->writeFrame(mf);
+    enqueueFrame(Id_CfgMaintenanceMode, QByteArray(), /*remoteRequest=*/true);
 }
 
 void FrigoController::requestAllConfigFromBoard()
@@ -483,17 +480,11 @@ void FrigoController::requestAllConfigFromBoard()
     if (!m_transport || !m_connected)
         return;
 
-    auto request = [this](quint32 id) {
-        QCanBusFrame f(id, QByteArray());
-        f.setFrameType(QCanBusFrame::RemoteRequestFrame);
-        m_transport->writeFrame(f);
-    };
-
     for (quint32 id : { Id_CfgTempMin, Id_CfgTempMax, Id_CfgTempEvaMin, Id_CfgDefrostInterval,
                          Id_CfgDefrostDuration, Id_CfgDefrostTimeout, Id_CfgAntiShortCycleDelay,
                          Id_CfgTempLimitTimeout, Id_CfgDoorAlarmDelay, Id_CfgOffsetCap1,
                          Id_CfgOffsetCap2, Id_CfgOffsetCap3, Id_CfgOffsetEva }) {
-        request(id);
+        enqueueFrame(id, QByteArray(), /*remoteRequest=*/true);
     }
     // We're about to adopt whatever the board reports register-by-register,
     // so once those responses land we'll match it by definition.
@@ -503,12 +494,18 @@ void FrigoController::requestAllConfigFromBoard()
     }
 }
 
-// --- Per-edit send ------------------------------------------------------
+// --- Commit on leaving Réglages ---------------------------------------------
 //
-// Called after every settings change. Only the registers that actually
-// differ from what we believe the board holds (m_boardConfig) are queued,
-// spaced ~100ms apart; once the queue drains, the commit signature is
-// recomputed from the new values and pushed to 0x30F.
+// Called once the UI has shown a confirmation popup and the user accepted
+// it. Only the registers that actually differ from what we believe the
+// board holds (m_boardConfig) are queued, spaced ~100ms apart (same as every
+// other frame — see enqueueFrame); once the queue drains, the commit
+// signature is recomputed from the new values and pushed to 0x30F.
+
+void FrigoController::commitConfigChanges()
+{
+    queueConfigDiff();
+}
 
 void FrigoController::queueConfigDiff()
 {
@@ -517,10 +514,10 @@ void FrigoController::queueConfigDiff()
 
     bool any = false;
     auto diffI32 = [&](quint32 id, qint32 &board, qint32 local) {
-        if (board != local) { enqueueWrite(id, encodeInt32LE(local)); board = local; any = true; }
+        if (board != local) { enqueueFrame(id, encodeInt32LE(local)); board = local; any = true; }
     };
     auto diffU32 = [&](quint32 id, quint32 &board, quint32 local) {
-        if (board != local) { enqueueWrite(id, encodeUInt32LE(local)); board = local; any = true; }
+        if (board != local) { enqueueFrame(id, encodeUInt32LE(local)); board = local; any = true; }
     };
 
     diffI32(Id_CfgTempMin, m_boardConfig.tempMin, m_config.tempMin);
@@ -539,16 +536,16 @@ void FrigoController::queueConfigDiff()
 
     if (any) {
         m_pendingSignaturePush = true;
-        if (m_configDirty) {
-            m_configDirty = false;
-            emit configDirtyChanged();
-        }
+    }
+    if (m_configDirty) {
+        m_configDirty = false;
+        emit configDirtyChanged();
     }
 }
 
-void FrigoController::enqueueWrite(quint32 id, const QByteArray &payload)
+void FrigoController::enqueueFrame(quint32 id, const QByteArray &payload, bool remoteRequest)
 {
-    m_writeQueue.enqueue({ id, payload });
+    m_writeQueue.enqueue({ id, payload, remoteRequest });
     if (!m_writeQueueActive) {
         m_writeQueueActive = true;
         processNextQueuedWrite();
@@ -570,8 +567,14 @@ void FrigoController::processNextQueuedWrite()
     }
 
     const QueuedFrame f = m_writeQueue.dequeue();
-    if (m_transport && m_connected)
-        m_transport->writeFrame(QCanBusFrame(f.id, f.payload));
+    if (m_transport && m_connected) {
+        QCanBusFrame frame(f.id, f.payload);
+        if (f.remoteRequest)
+            frame.setFrameType(QCanBusFrame::RemoteRequestFrame);
+        m_transport->writeFrame(frame);
+    }
+    // Same ~100ms spacing for every queued frame, RTR (read) or write —
+    // keeps the board from being flooded either way.
     m_writeSpacingTimer.start();
 }
 

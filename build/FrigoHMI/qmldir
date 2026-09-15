@@ -10,5 +10,6 @@ MaintenancePage 1.0 qml/MaintenancePage.qml
 NumPad 1.0 qml/components/NumPad.qml
 TempChart 1.0 qml/components/TempChart.qml
 SettingsRow 1.0 qml/components/SettingsRow.qml
+Keyboard 1.0 qml/components/Keyboard.qml
 depends QtQuick
 

@@ -11,6 +11,21 @@ Item {
     signal locked
     signal enterMaintenance
 
+    property bool showWifiKeyboard: false
+    property string wifiPendingSsid: ""
+    property string wifiConnectStatus: ""
+    property color wifiConnectStatusColor: theme.mt
+
+    Connections {
+        target: netmgr
+        function onConnectFinished(success, message) {
+            root.wifiConnectStatus = success ? "Connecté avec succès." : ("Échec de connexion" + (message ? " : " + message : ""));
+            root.wifiConnectStatusColor = success ? theme.green : theme.red;
+            wifiStatusClearTimer.restart();
+        }
+    }
+    Timer { id: wifiStatusClearTimer; interval: 6000; onTriggered: root.wifiConnectStatus = "" }
+
     RowLayout {
         anchors.fill: parent
         spacing: 0
@@ -76,7 +91,7 @@ Item {
                     }
                     MouseArea {
                         anchors.fill: parent
-                        onClicked: { frigo.lockSettings(); root.locked(); }
+                        onClicked: root.locked()
                     }
                 }
             }
@@ -270,12 +285,12 @@ Item {
                             border.width: 1
                             Text {
                                 anchors.centerIn: parent
-                                text: "Rechercher les réseaux"
+                                text: netmgr.scanning ? "Recherche…" : "Rechercher les réseaux"
                                 color: theme.tx; font.family: theme.sans; font.pixelSize: 16; font.weight: Font.DemiBold
                             }
                             MouseArea {
                                 anchors.fill: parent
-                                enabled: netmgr.available && !netmgr.busy
+                                enabled: netmgr.available && !netmgr.busy && !netmgr.scanning
                                 onClicked: netmgr.rescan()
                             }
                         }
@@ -297,6 +312,88 @@ Item {
                                 enabled: netmgr.available && netmgr.wifiConnected && !netmgr.busy
                                 onClicked: netmgr.renewIp()
                             }
+                        }
+                    }
+
+                    Text {
+                        visible: root.wifiConnectStatus.length > 0
+                        text: root.wifiConnectStatus
+                        color: root.wifiConnectStatusColor
+                        font.family: theme.sans
+                        font.pixelSize: 13
+                        wrapMode: Text.WordWrap
+                        Layout.fillWidth: true
+                    }
+
+                    ColumnLayout {
+                        Layout.fillWidth: true
+                        Layout.topMargin: 4
+                        spacing: 8
+                        visible: netmgr.available && netmgr.wifiEnabled
+
+                        Text {
+                            text: "RÉSEAUX DISPONIBLES"
+                            color: theme.mt; font.family: theme.sans; font.pixelSize: 12; font.letterSpacing: 1.3
+                        }
+
+                        Repeater {
+                            model: netmgr.availableNetworks
+                            delegate: Rectangle {
+                                required property var modelData
+                                Layout.fillWidth: true
+                                Layout.preferredHeight: 60
+                                radius: 6
+                                color: modelData.inUse ? theme.selBg : theme.pn
+                                border.color: modelData.inUse ? theme.accent : theme.ln
+                                border.width: 1
+
+                                RowLayout {
+                                    anchors.fill: parent
+                                    anchors.leftMargin: 16
+                                    anchors.rightMargin: 16
+                                    spacing: 14
+
+                                    Text {
+                                        text: modelData.ssid
+                                        color: theme.tx; font.family: theme.sans; font.pixelSize: 16; font.weight: Font.DemiBold
+                                        Layout.fillWidth: true
+                                        elide: Text.ElideRight
+                                    }
+                                    Text {
+                                        visible: modelData.secured
+                                        text: "SÉCURISÉ"
+                                        color: theme.mt; font.family: theme.sans; font.pixelSize: 11; font.letterSpacing: 0.8
+                                    }
+                                    Text {
+                                        text: modelData.signal + " %"
+                                        color: theme.mt; font.family: theme.mono; font.pixelSize: 13
+                                    }
+                                    Text {
+                                        visible: modelData.inUse
+                                        text: "CONNECTÉ"
+                                        color: theme.accent; font.family: theme.sans; font.pixelSize: 12; font.weight: Font.Bold
+                                    }
+                                }
+                                MouseArea {
+                                    anchors.fill: parent
+                                    enabled: !modelData.inUse && !netmgr.busy
+                                    onClicked: {
+                                        if (modelData.secured) {
+                                            root.wifiPendingSsid = modelData.ssid;
+                                            wifiKeyboard.value = "";
+                                            root.showWifiKeyboard = true;
+                                        } else {
+                                            netmgr.connectToNetwork(modelData.ssid, "");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        Text {
+                            visible: netmgr.availableNetworks.length === 0 && !netmgr.scanning
+                            text: "Aucun réseau trouvé — touchez « Rechercher les réseaux »"
+                            color: theme.mt; font.family: theme.sans; font.pixelSize: 13
                         }
                     }
                 }
@@ -385,6 +482,39 @@ Item {
                 }
 
                 Item { Layout.preferredHeight: 12 }
+            }
+        }
+    }
+
+    // --- Wi-Fi password keyboard -----------------------------------------
+    Rectangle {
+        anchors.fill: parent
+        visible: root.showWifiKeyboard
+        color: Qt.rgba(6 / 255, 9 / 255, 12 / 255, 0.88)
+        z: 50
+
+        MouseArea { anchors.fill: parent }
+
+        Rectangle {
+            width: 880
+            height: 430
+            anchors.centerIn: parent
+            radius: 8
+            color: theme.pn
+            border.color: theme.ln
+            border.width: 1
+
+            Keyboard {
+                id: wifiKeyboard
+                anchors.fill: parent
+                anchors.margins: 20
+                title: "Mot de passe — " + root.wifiPendingSsid
+                isPassword: true
+                onAccepted: (value) => {
+                    root.showWifiKeyboard = false;
+                    netmgr.connectToNetwork(root.wifiPendingSsid, value);
+                }
+                onCancelled: root.showWifiKeyboard = false
             }
         }
     }

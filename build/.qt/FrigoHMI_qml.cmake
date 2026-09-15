@@ -20,6 +20,8 @@ set(src_and_dest_list
     "C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI/qml/components/TempChart.qml"
     "C:/Users/hlwad/Desktop/Frigo/qml/components/SettingsRow.qml"
     "C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI/qml/components/SettingsRow.qml"
+    "C:/Users/hlwad/Desktop/Frigo/qml/components/Keyboard.qml"
+    "C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI/qml/components/Keyboard.qml"
 
 )
 set(timestamp_file "C:/Users/hlwad/Desktop/Frigo/build/.qt/FrigoHMI_qml.txt")

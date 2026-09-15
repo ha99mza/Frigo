@@ -104,7 +104,7 @@
                         {
                             "codegenResult": 2,
                             "column": 20,
-                            "durationMicroseconds": 1000,
+                            "durationMicroseconds": 0,
                             "functionName": "model",
                             "line": 63,
                             "message": "Cannot access value for name frigo"
@@ -248,7 +248,7 @@
                         {
                             "codegenResult": 0,
                             "column": 38,
-                            "durationMicroseconds": 0,
+                            "durationMicroseconds": 1000,
                             "functionName": "visible",
                             "line": 101,
                             "message": ""

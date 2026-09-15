@@ -166,6 +166,13 @@ public:
     // required the current PIN), matching the design's flow.
     Q_INVOKABLE bool changeSettingsPin(const QString &newPin);
 
+    // Settings edits (+/- in Réglages) only change m_config locally and mark
+    // configDirty — nothing is sent until the UI confirms leaving the page
+    // (a confirmation popup) and calls this. Diffs against the last known
+    // board values, sends only what changed (spaced ~100ms apart), then
+    // recomputes and pushes the commit signature once the queue drains.
+    Q_INVOKABLE void commitConfigChanges();
+
     // Historique page data.
     Q_INVOKABLE QVariantList temperatureSeries(const QString &range) const { return m_history.temperatureSeries(range); }
     Q_INVOKABLE QVariantMap rangeStats(const QString &range) const { return m_history.rangeStats(range); }
@@ -210,7 +217,7 @@ private slots:
     void processNextQueuedWrite();
 
 private:
-    struct QueuedFrame { quint32 id; QByteArray payload; };
+    struct QueuedFrame { quint32 id; QByteArray payload; bool remoteRequest = false; };
 
     void setTransport(ICanTransport *transport, const QString &label);
     void handleConfigFrame(quint32 id, const QByteArray &payload);
@@ -220,17 +227,15 @@ private:
     // Startup sync: verify our locally-held settings still match the board
     // before trusting them, per the documented handshake — RTR the commit
     // signature (0x30F), and only pull every individual register (0x300..
-    // 0x30C) if it doesn't match what we compute locally.
+    // 0x30C) if it doesn't match what we compute locally. Both go through
+    // the same spaced queue as writes (~100ms between frames, RTR or not).
     void verifySignatureOnConnect();
     void requestAllConfigFromBoard();
 
-    // Per-edit send: called after every settings change. Diffs m_config
-    // against m_boardConfig (the last value we believe the board holds),
-    // enqueues a write for just the registers that actually changed, then
-    // once the queue drains, recomputes and pushes the commit signature.
-    // Frames are spaced ~100ms apart so the board isn't flooded.
+    // Diffs m_config against m_boardConfig (the last value we believe the
+    // board holds) and enqueues a write for just the registers that changed.
     void queueConfigDiff();
-    void enqueueWrite(quint32 id, const QByteArray &payload);
+    void enqueueFrame(quint32 id, const QByteArray &payload, bool remoteRequest = false);
 
     std::unique_ptr<ICanTransport> m_transport;
     bool m_connected = false;

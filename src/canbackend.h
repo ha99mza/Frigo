@@ -66,6 +66,6 @@ private:
     QCanBusDevice *m_device = nullptr;
     QString m_pluginName;
     QString m_interfaceName;
-    int m_bitrate = 500000;
+    int m_bitrate = 250000;
     bool m_connected = false;
 };

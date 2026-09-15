@@ -1,8 +1,10 @@
 #include "networkmanager.h"
 
+#include <QMap>
 #include <QProcess>
 #include <QStandardPaths>
 #include <QStringList>
+#include <QVariantMap>
 
 namespace {
 
@@ -54,6 +56,13 @@ void NetworkManager::setBusy(bool b)
     emit busyChanged();
 }
 
+void NetworkManager::setScanning(bool b)
+{
+    if (b == m_scanning) return;
+    m_scanning = b;
+    emit scanningChanged();
+}
+
 void NetworkManager::refresh()
 {
     if (!m_available)
@@ -82,7 +91,6 @@ void NetworkManager::applyStatus()
     }
 
     QString ip, gateway, mask, mac;
-    int signal = 0;
     QString ssid = wifiConnected ? connName : QString();
 
     if (!device.isEmpty() && wifiConnected) {
@@ -104,17 +112,48 @@ void NetworkManager::applyStatus()
                 gateway = val;
             }
         }
+    }
 
+    // One scan list serves both "what's the signal of the network we're on"
+    // and the full list of nearby networks for the UI to pick from.
+    int signal = 0;
+    QVariantList networks;
+    if (!device.isEmpty() && wifiEnabled) {
         const QString wifiList = runNmcli({ QStringLiteral("-t"), QStringLiteral("-f"),
-                                             QStringLiteral("IN-USE,SIGNAL"),
+                                             QStringLiteral("IN-USE,SSID,SIGNAL,SECURITY"),
                                              QStringLiteral("device"), QStringLiteral("wifi"), QStringLiteral("list"),
                                              QStringLiteral("ifname"), device });
+        QMap<QString, QVariantMap> bySsid; // dedupe multiple BSSIDs of the same SSID, keep strongest
         for (const QString &line : wifiList.split(QLatin1Char('\n'), Qt::SkipEmptyParts)) {
-            if (line.startsWith(QLatin1Char('*'))) {
-                signal = line.section(QLatin1Char(':'), 1, 1).toInt();
-                break;
+            const QStringList cols = line.split(QLatin1Char(':'));
+            if (cols.size() < 4)
+                continue;
+            const bool inUse = cols[0].startsWith(QLatin1Char('*'));
+            const QString netSsid = cols[1];
+            const int netSignal = cols[2].toInt();
+            const bool secured = !cols[3].isEmpty() && cols[3] != QStringLiteral("--");
+            if (netSsid.isEmpty())
+                continue; // hidden network, nothing to show/select
+
+            if (inUse)
+                signal = netSignal;
+
+            const auto it = bySsid.constFind(netSsid);
+            if (it == bySsid.constEnd() || it->value(QStringLiteral("signal")).toInt() < netSignal) {
+                QVariantMap m;
+                m[QStringLiteral("ssid")] = netSsid;
+                m[QStringLiteral("signal")] = netSignal;
+                m[QStringLiteral("secured")] = secured;
+                m[QStringLiteral("inUse")] = inUse;
+                bySsid[netSsid] = m;
             }
         }
+        QList<QVariantMap> sorted = bySsid.values();
+        std::sort(sorted.begin(), sorted.end(), [](const QVariantMap &a, const QVariantMap &b) {
+            return a.value(QStringLiteral("signal")).toInt() > b.value(QStringLiteral("signal")).toInt();
+        });
+        for (const QVariantMap &m : std::as_const(sorted))
+            networks.append(m);
     }
 
     m_wifiDevice = device;
@@ -135,6 +174,9 @@ void NetworkManager::applyStatus()
 
     if (changed)
         emit statusChanged();
+
+    m_availableNetworks = networks;
+    emit availableNetworksChanged();
 }
 
 void NetworkManager::setWifiEnabled(bool on)
@@ -147,12 +189,16 @@ void NetworkManager::setWifiEnabled(bool on)
 
 void NetworkManager::rescan()
 {
-    if (!m_available)
+    if (!m_available || m_scanning)
         return;
+    setScanning(true);
     runNmcli({ QStringLiteral("device"), QStringLiteral("wifi"), QStringLiteral("rescan") });
-    // A scan takes a couple of seconds to populate; the next regular poll
-    // (or a manual one shortly after) will pick up fresh results.
-    QTimer::singleShot(2000, this, &NetworkManager::refresh);
+    // A scan takes a couple of seconds to populate; give it time before
+    // reading the results back.
+    QTimer::singleShot(2500, this, [this] {
+        refresh();
+        setScanning(false);
+    });
 }
 
 void NetworkManager::renewIp()
@@ -175,4 +221,27 @@ void NetworkManager::renewIp()
         up->start(QStringLiteral("nmcli"), { QStringLiteral("connection"), QStringLiteral("up"), m_activeConnName });
     });
     down->start(QStringLiteral("nmcli"), { QStringLiteral("connection"), QStringLiteral("down"), m_activeConnName });
+}
+
+void NetworkManager::connectToNetwork(const QString &ssid, const QString &password)
+{
+    if (!m_available || ssid.isEmpty())
+        return;
+    setBusy(true);
+
+    QStringList args = { QStringLiteral("device"), QStringLiteral("wifi"), QStringLiteral("connect"), ssid };
+    if (!password.isEmpty())
+        args << QStringLiteral("password") << password;
+
+    auto *p = new QProcess(this);
+    connect(p, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this,
+            [this, p](int exitCode, QProcess::ExitStatus) {
+        const bool ok = (exitCode == 0);
+        const QString out = QString::fromUtf8(p->readAllStandardOutput() + p->readAllStandardError()).trimmed();
+        p->deleteLater();
+        setBusy(false);
+        refresh();
+        emit connectFinished(ok, out);
+    });
+    p->start(QStringLiteral("nmcli"), args);
 }

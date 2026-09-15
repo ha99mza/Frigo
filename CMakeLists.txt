@@ -55,6 +55,7 @@ qt_add_qml_module(FrigoHMI
         qml/components/NumPad.qml
         qml/components/TempChart.qml
         qml/components/SettingsRow.qml
+        qml/components/Keyboard.qml
     RESOURCES
         resources/qtquickcontrols2.conf
 )

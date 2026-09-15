@@ -3,6 +3,7 @@
 #include <QObject>
 #include <QString>
 #include <QTimer>
+#include <QVariantList>
 
 // Thin Linux-only Wi-Fi status/control wrapper around `nmcli` (NetworkManager's
 // CLI), polled periodically. Deliberately simple (QProcess + text parsing,
@@ -25,6 +26,9 @@ class NetworkManager : public QObject
     Q_PROPERTY(QString macAddress READ macAddress NOTIFY statusChanged)
     Q_PROPERTY(int signalStrength READ signalStrength NOTIFY statusChanged)
     Q_PROPERTY(bool busy READ busy NOTIFY busyChanged)
+    Q_PROPERTY(bool scanning READ scanning NOTIFY scanningChanged)
+    // [{ssid, signal, secured, inUse}, ...], sorted strongest-first.
+    Q_PROPERTY(QVariantList availableNetworks READ availableNetworks NOTIFY availableNetworksChanged)
 
 public:
     explicit NetworkManager(QObject *parent = nullptr);
@@ -39,24 +43,36 @@ public:
     QString macAddress() const { return m_mac; }
     int signalStrength() const { return m_signal; }
     bool busy() const { return m_busy; }
+    bool scanning() const { return m_scanning; }
+    QVariantList availableNetworks() const { return m_availableNetworks; }
 
     Q_INVOKABLE void setWifiEnabled(bool on);
     Q_INVOKABLE void rescan();
     Q_INVOKABLE void renewIp();
     Q_INVOKABLE void refresh();
+    // password may be empty for an open network.
+    Q_INVOKABLE void connectToNetwork(const QString &ssid, const QString &password);
 
 signals:
     void availableChanged();
     void statusChanged();
     void busyChanged();
+    void scanningChanged();
+    void availableNetworksChanged();
+    // Fired once a connectToNetwork() attempt finishes (success or not) so
+    // the UI can show an error (e.g. wrong password) instead of just
+    // silently sitting there.
+    void connectFinished(bool success, const QString &message);
 
 private:
     void setBusy(bool b);
+    void setScanning(bool b);
     void applyStatus();
 
     QTimer m_pollTimer;
     bool m_available = false;
     bool m_busy = false;
+    bool m_scanning = false;
 
     bool m_wifiEnabled = false;
     bool m_wifiConnected = false;
@@ -66,6 +82,7 @@ private:
     QString m_mask;
     QString m_mac;
     int m_signal = 0;
+    QVariantList m_availableNetworks;
 
     QString m_wifiDevice;       // e.g. "wlan0"
     QString m_activeConnName;   // nmcli connection profile name, for renewIp()

@@ -18,7 +18,7 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "activeAlarms",
-                            "line": 52,
+                            "line": 54,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -26,23 +26,47 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "hasAlarm",
-                            "line": 53,
+                            "line": 55,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
                             "column": 5,
                             "durationMicroseconds": 0,
-                            "functionName": "go",
-                            "line": 55,
+                            "functionName": "attemptLeave",
+                            "line": 61,
                             "message": "Functions without type annotations won't be compiled"
                         },
                         {
                             "codegenResult": 2,
                             "column": 5,
                             "durationMicroseconds": 0,
+                            "functionName": "applyAction",
+                            "line": 70,
+                            "message": "Functions without type annotations won't be compiled"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 5,
+                            "durationMicroseconds": 0,
+                            "functionName": "confirmLeaveAndSend",
+                            "line": 83,
+                            "message": "Cannot access value for name frigo"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 5,
+                            "durationMicroseconds": 0,
+                            "functionName": "cancelLeaveConfirm",
+                            "line": 91,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 5,
+                            "durationMicroseconds": 0,
                             "functionName": "pinPress",
-                            "line": 63,
+                            "line": 96,
                             "message": "Functions without type annotations won't be compiled"
                         },
                         {
@@ -56,7 +80,7 @@
                         {
                             "codegenResult": 0,
                             "column": 37,
-                            "durationMicroseconds": 4000,
+                            "durationMicroseconds": 0,
                             "functionName": "bg",
                             "line": 26,
                             "message": ""
@@ -130,7 +154,7 @@
                             "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 79,
+                            "line": 112,
                             "message": ""
                         },
                         {
@@ -138,7 +162,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 78,
+                            "line": 111,
                             "message": ""
                         },
                         {
@@ -146,7 +170,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 82,
+                            "line": 115,
                             "message": ""
                         },
                         {
@@ -154,7 +178,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 89,
+                            "line": 122,
                             "message": ""
                         },
                         {
@@ -162,7 +186,7 @@
                             "column": 134,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 90,
+                            "line": 123,
                             "message": ""
                         },
                         {
@@ -170,7 +194,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "left",
-                            "line": 90,
+                            "line": 123,
                             "message": ""
                         },
                         {
@@ -178,7 +202,7 @@
                             "column": 71,
                             "durationMicroseconds": 0,
                             "functionName": "right",
-                            "line": 90,
+                            "line": 123,
                             "message": ""
                         },
                         {
@@ -186,7 +210,7 @@
                             "column": 101,
                             "durationMicroseconds": 0,
                             "functionName": "bottom",
-                            "line": 90,
+                            "line": 123,
                             "message": ""
                         },
                         {
@@ -194,7 +218,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 93,
+                            "line": 126,
                             "message": ""
                         },
                         {
@@ -202,7 +226,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 100,
+                            "line": 133,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -210,7 +234,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 103,
+                            "line": 136,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -218,7 +242,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 104,
+                            "line": 137,
                             "message": ""
                         },
                         {
@@ -226,7 +250,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 105,
+                            "line": 138,
                             "message": ""
                         },
                         {
@@ -234,7 +258,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 107,
+                            "line": 140,
                             "message": ""
                         },
                         {
@@ -242,7 +266,7 @@
                             "column": 62,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 110,
+                            "line": 143,
                             "message": ""
                         },
                         {
@@ -250,7 +274,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 112,
+                            "line": 145,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -258,7 +282,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 117,
+                            "line": 150,
                             "message": ""
                         },
                         {
@@ -266,7 +290,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 118,
+                            "line": 151,
                             "message": ""
                         },
                         {
@@ -274,7 +298,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 124,
+                            "line": 157,
                             "message": ""
                         },
                         {
@@ -282,7 +306,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 125,
+                            "line": 158,
                             "message": ""
                         },
                         {
@@ -290,7 +314,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 126,
+                            "line": 159,
                             "message": ""
                         },
                         {
@@ -298,7 +322,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 128,
+                            "line": 161,
                             "message": ""
                         },
                         {
@@ -306,7 +330,7 @@
                             "column": 91,
                             "durationMicroseconds": 0,
                             "functionName": "onTriggered",
-                            "line": 129,
+                            "line": 162,
                             "message": ""
                         },
                         {
@@ -314,7 +338,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 132,
+                            "line": 165,
                             "message": ""
                         },
                         {
@@ -322,7 +346,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 133,
+                            "line": 166,
                             "message": ""
                         },
                         {
@@ -330,7 +354,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 134,
+                            "line": 167,
                             "message": ""
                         },
                         {
@@ -338,7 +362,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 139,
+                            "line": 172,
                             "message": ""
                         },
                         {
@@ -346,7 +370,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 140,
+                            "line": 173,
                             "message": ""
                         },
                         {
@@ -354,7 +378,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 144,
+                            "line": 177,
                             "message": ""
                         },
                         {
@@ -362,7 +386,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 148,
+                            "line": 181,
                             "message": ""
                         },
                         {
@@ -370,7 +394,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 143,
+                            "line": 176,
                             "message": ""
                         },
                         {
@@ -378,7 +402,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 146,
+                            "line": 179,
                             "message": ""
                         },
                         {
@@ -386,7 +410,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 147,
+                            "line": 180,
                             "message": ""
                         },
                         {
@@ -394,7 +418,7 @@
                             "column": 70,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 150,
+                            "line": 183,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -402,7 +426,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 150,
+                            "line": 183,
                             "message": ""
                         },
                         {
@@ -410,7 +434,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 161,
+                            "line": 194,
                             "message": ""
                         },
                         {
@@ -418,7 +442,7 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "preferredHeight",
-                            "line": 158,
+                            "line": 191,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -426,7 +450,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 165,
+                            "line": 198,
                             "message": ""
                         },
                         {
@@ -434,7 +458,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "loops",
-                            "line": 173,
+                            "line": 206,
                             "message": ""
                         },
                         {
@@ -442,7 +466,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 179,
+                            "line": 212,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -450,7 +474,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 181,
+                            "line": 214,
                             "message": ""
                         },
                         {
@@ -458,7 +482,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 183,
+                            "line": 216,
                             "message": ""
                         },
                         {
@@ -466,7 +490,7 @@
                             "column": 100,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 186,
+                            "line": 219,
                             "message": ""
                         },
                         {
@@ -474,7 +498,7 @@
                             "column": 62,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 188,
+                            "line": 221,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -482,7 +506,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 188,
+                            "line": 221,
                             "message": ""
                         },
                         {
@@ -490,7 +514,7 @@
                             "column": 59,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 196,
+                            "line": 229,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -498,7 +522,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 196,
+                            "line": 229,
                             "message": ""
                         },
                         {
@@ -506,7 +530,7 @@
                             "column": 59,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 197,
+                            "line": 230,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -514,7 +538,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 197,
+                            "line": 230,
                             "message": ""
                         },
                         {
@@ -522,7 +546,7 @@
                             "column": 61,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 198,
+                            "line": 231,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -530,7 +554,7 @@
                             "column": 44,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 198,
+                            "line": 231,
                             "message": ""
                         },
                         {
@@ -538,7 +562,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 201,
+                            "line": 234,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -546,7 +570,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "onLocked",
-                            "line": 202,
+                            "line": 235,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -554,7 +578,7 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "onEnterMaintenance",
-                            "line": 203,
+                            "line": 236,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -562,7 +586,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 200,
+                            "line": 233,
                             "message": ""
                         },
                         {
@@ -570,7 +594,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 207,
+                            "line": 240,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -578,7 +602,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "onExited",
-                            "line": 208,
+                            "line": 241,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -586,7 +610,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 206,
+                            "line": 239,
                             "message": ""
                         },
                         {
@@ -594,7 +618,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 216,
+                            "line": 249,
                             "message": ""
                         },
                         {
@@ -602,7 +626,7 @@
                             "column": 128,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 217,
+                            "line": 250,
                             "message": ""
                         },
                         {
@@ -610,7 +634,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "left",
-                            "line": 217,
+                            "line": 250,
                             "message": ""
                         },
                         {
@@ -618,7 +642,7 @@
                             "column": 71,
                             "durationMicroseconds": 0,
                             "functionName": "right",
-                            "line": 217,
+                            "line": 250,
                             "message": ""
                         },
                         {
@@ -626,7 +650,7 @@
                             "column": 98,
                             "durationMicroseconds": 0,
                             "functionName": "top",
-                            "line": 217,
+                            "line": 250,
                             "message": ""
                         },
                         {
@@ -634,7 +658,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 220,
+                            "line": 253,
                             "message": ""
                         },
                         {
@@ -642,7 +666,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "model",
-                            "line": 224,
+                            "line": 257,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
                         },
                         {
@@ -650,7 +674,7 @@
                             "column": 56,
                             "durationMicroseconds": 0,
                             "functionName": "on",
-                            "line": 232,
+                            "line": 265,
                             "message": "Cannot access value for name window"
                         },
                         {
@@ -658,7 +682,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 235,
+                            "line": 268,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -666,7 +690,7 @@
                             "column": 140,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 236,
+                            "line": 269,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -674,7 +698,7 @@
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "left",
-                            "line": 236,
+                            "line": 269,
                             "message": ""
                         },
                         {
@@ -682,7 +706,7 @@
                             "column": 83,
                             "durationMicroseconds": 0,
                             "functionName": "right",
-                            "line": 236,
+                            "line": 269,
                             "message": ""
                         },
                         {
@@ -690,7 +714,7 @@
                             "column": 110,
                             "durationMicroseconds": 0,
                             "functionName": "top",
-                            "line": 236,
+                            "line": 269,
                             "message": ""
                         },
                         {
@@ -698,7 +722,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 239,
+                            "line": 272,
                             "message": ""
                         },
                         {
@@ -706,7 +730,7 @@
                             "column": 45,
                             "durationMicroseconds": 0,
                             "functionName": "radius",
-                            "line": 244,
+                            "line": 277,
                             "message": "Cannot access value for name modelData"
                         },
                         {
@@ -714,7 +738,7 @@
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "alignment",
-                            "line": 242,
+                            "line": 275,
                             "message": ""
                         },
                         {
@@ -722,7 +746,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 247,
+                            "line": 280,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -730,7 +754,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 251,
+                            "line": 284,
                             "message": "Cannot access value for name modelData"
                         },
                         {
@@ -738,7 +762,7 @@
                             "column": 44,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 256,
+                            "line": 289,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -746,7 +770,7 @@
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "alignment",
-                            "line": 250,
+                            "line": 283,
                             "message": ""
                         },
                         {
@@ -754,7 +778,7 @@
                             "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 252,
+                            "line": 285,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -762,7 +786,7 @@
                             "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 254,
+                            "line": 287,
                             "message": ""
                         },
                         {
@@ -770,7 +794,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 261,
+                            "line": 294,
                             "message": "Cannot access value for name modelData"
                         },
                         {
@@ -778,7 +802,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 266,
+                            "line": 299,
                             "message": ""
                         },
                         {
@@ -786,7 +810,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 269,
+                            "line": 302,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -794,7 +818,7 @@
                             "column": 46,
                             "durationMicroseconds": 0,
                             "functionName": "top",
-                            "line": 262,
+                            "line": 295,
                             "message": ""
                         },
                         {
@@ -802,7 +826,7 @@
                             "column": 59,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalCenter",
-                            "line": 264,
+                            "line": 297,
                             "message": ""
                         },
                         {
@@ -810,7 +834,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 273,
+                            "line": 306,
                             "message": "Cannot access value for name window"
                         },
                         {
@@ -818,7 +842,7 @@
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 272,
+                            "line": 305,
                             "message": ""
                         },
                         {
@@ -826,7 +850,7 @@
                             "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 276,
+                            "line": 309,
                             "message": ""
                         },
                         {
@@ -834,7 +858,7 @@
                             "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 277,
+                            "line": 310,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -842,7 +866,7 @@
                             "column": 74,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 281,
+                            "line": 314,
                             "message": "Cannot access value for name window"
                         },
                         {
@@ -850,7 +874,7 @@
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 281,
+                            "line": 314,
                             "message": ""
                         },
                         {
@@ -858,7 +882,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 291,
+                            "line": 324,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -866,7 +890,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 290,
+                            "line": 323,
                             "message": ""
                         },
                         {
@@ -874,7 +898,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "running",
-                            "line": 298,
+                            "line": 331,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -882,7 +906,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "loops",
-                            "line": 299,
+                            "line": 332,
                             "message": ""
                         },
                         {
@@ -890,7 +914,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 308,
+                            "line": 341,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -898,7 +922,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 309,
+                            "line": 342,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant"
                         },
                         {
@@ -906,7 +930,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 307,
+                            "line": 340,
                             "message": ""
                         },
                         {
@@ -914,7 +938,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 312,
+                            "line": 345,
                             "message": ""
                         },
                         {
@@ -922,7 +946,7 @@
                             "column": 25,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 316,
+                            "line": 349,
                             "message": ""
                         },
                         {
@@ -930,7 +954,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 319,
+                            "line": 352,
                             "message": ""
                         },
                         {
@@ -938,7 +962,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 317,
+                            "line": 350,
                             "message": ""
                         },
                         {
@@ -946,7 +970,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 320,
+                            "line": 353,
                             "message": ""
                         },
                         {
@@ -954,7 +978,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 325,
+                            "line": 358,
                             "message": ""
                         },
                         {
@@ -962,7 +986,7 @@
                             "column": 63,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 331,
+                            "line": 364,
                             "message": ""
                         },
                         {
@@ -970,7 +994,7 @@
                             "column": 86,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 331,
+                            "line": 364,
                             "message": ""
                         },
                         {
@@ -978,7 +1002,7 @@
                             "column": 131,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 331,
+                            "line": 364,
                             "message": ""
                         },
                         {
@@ -986,7 +1010,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 335,
+                            "line": 368,
                             "message": ""
                         },
                         {
@@ -994,7 +1018,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 336,
+                            "line": 369,
                             "message": ""
                         },
                         {
@@ -1002,7 +1026,7 @@
                             "column": 95,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 338,
+                            "line": 371,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1010,7 +1034,7 @@
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 338,
+                            "line": 371,
                             "message": ""
                         },
                         {
@@ -1018,7 +1042,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 342,
+                            "line": 375,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1026,7 +1050,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 343,
+                            "line": 376,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1034,7 +1058,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 344,
+                            "line": 377,
                             "message": ""
                         },
                         {
@@ -1042,7 +1066,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 351,
+                            "line": 384,
                             "message": ""
                         },
                         {
@@ -1050,7 +1074,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 352,
+                            "line": 385,
                             "message": ""
                         },
                         {
@@ -1058,7 +1082,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 356,
+                            "line": 389,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1066,7 +1090,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 360,
+                            "line": 393,
                             "message": ""
                         },
                         {
@@ -1074,7 +1098,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 355,
+                            "line": 388,
                             "message": ""
                         },
                         {
@@ -1082,7 +1106,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 357,
+                            "line": 390,
                             "message": ""
                         },
                         {
@@ -1090,7 +1114,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "keyBg",
-                            "line": 366,
+                            "line": 399,
                             "message": ""
                         },
                         {
@@ -1098,7 +1122,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onKeyPressed",
-                            "line": 368,
+                            "line": 401,
                             "message": "Cannot retrieve a non-object type by ID: window"
                         },
                         {
@@ -1106,7 +1130,231 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onKeyPressed",
-                            "line": 368,
+                            "line": 401,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 410,
+                            "message": "Cannot retrieve a non-object type by ID: window"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 411,
+                            "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 409,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 414,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 25,
+                            "durationMicroseconds": 0,
+                            "functionName": "height",
+                            "line": 418,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 421,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "centerIn",
+                            "line": 419,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 422,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 427,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 433,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 434,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 436,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 440,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 443,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 441,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 454,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 459,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 51,
+                            "durationMicroseconds": 0,
+                            "functionName": "centerIn",
+                            "line": 457,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 46,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 460,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 46,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 462,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 74,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 464,
+                            "message": "Cannot retrieve a non-object type by ID: window"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 55,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 464,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 470,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 51,
+                            "durationMicroseconds": 0,
+                            "functionName": "centerIn",
+                            "line": 472,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 46,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 475,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 46,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 477,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 74,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 479,
+                            "message": "Cannot retrieve a non-object type by ID: window"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 55,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 479,
                             "message": ""
                         }
                     ],

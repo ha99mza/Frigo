@@ -68,6 +68,13 @@ namespace _0x5f_FrigoHMI_qml_components_SettingsRow_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _0x5f_FrigoHMI_qml_components_Keyboard_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -91,6 +98,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/components/NumPad.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_components_NumPad_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/components/TempChart.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_components_TempChart_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/components/SettingsRow.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_components_SettingsRow_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/FrigoHMI/qml/components/Keyboard.qml"), &QmlCacheGeneratedCode::_0x5f_FrigoHMI_qml_components_Keyboard_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

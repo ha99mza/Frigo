@@ -48,16 +48,49 @@ ApplicationWindow {
     property bool showPin: false
     property string pin: ""
     property string pinErr: ""
+    property bool showLeaveConfirm: false
+    property string pendingAction: ""
 
     readonly property int activeAlarms: frigo.errorLog.activeCount
     readonly property bool hasAlarm: activeAlarms > 0
 
-    function go(p) {
-        if (p === "set" && !frigo.settingsUnlocked) {
+    // Entry point for every navigation attempt (nav bar, alarm banner,
+    // "Verrouiller"). If we're leaving Réglages with unsent edits, block on
+    // a confirmation popup first; commitConfigChanges() only ever runs after
+    // the user accepts it.
+    function attemptLeave(target) {
+        if (page === "set" && target !== "set" && frigo.configDirty) {
+            pendingAction = target;
+            showLeaveConfirm = true;
+            return;
+        }
+        applyAction(target);
+    }
+
+    function applyAction(target) {
+        if (target === "lock") {
+            frigo.lockSettings();
+            page = "temp";
+            return;
+        }
+        if (target === "set" && !frigo.settingsUnlocked) {
             showPin = true; pin = ""; pinErr = "";
             return;
         }
-        page = p;
+        page = target;
+    }
+
+    function confirmLeaveAndSend() {
+        frigo.commitConfigChanges();
+        showLeaveConfirm = false;
+        const t = pendingAction;
+        pendingAction = "";
+        applyAction(t);
+    }
+
+    function cancelLeaveConfirm() {
+        showLeaveConfirm = false;
+        pendingAction = "";
     }
 
     function pinPress(k) {
@@ -185,7 +218,7 @@ ApplicationWindow {
                     Item { Layout.fillWidth: true }
                     Text { text: "Voir les alarmes ›"; color: "white"; opacity: 0.85; font.family: theme.sans; font.pixelSize: 14 }
                 }
-                MouseArea { anchors.fill: parent; onClicked: window.page = "alarms" }
+                MouseArea { anchors.fill: parent; onClicked: window.attemptLeave("alarms") }
             }
 
             // --- Content ------------------------------------------------
@@ -199,7 +232,7 @@ ApplicationWindow {
                 SettingsPage {
                     anchors.fill: parent
                     visible: window.page === "set"
-                    onLocked: window.page = "temp"
+                    onLocked: window.attemptLeave("lock")
                     onEnterMaintenance: window.page = "maint"
                 }
                 MaintenancePage {
@@ -278,7 +311,7 @@ ApplicationWindow {
                                 }
                             }
 
-                            MouseArea { anchors.fill: parent; onClicked: window.go(modelData.k) }
+                            MouseArea { anchors.fill: parent; onClicked: window.attemptLeave(modelData.k) }
                         }
                     }
                 }
@@ -366,6 +399,85 @@ ApplicationWindow {
                         keyBg: theme.bg
                         fontSize: 26
                         onKeyPressed: (k) => window.pinPress(k)
+                    }
+                }
+            }
+        }
+
+        // --- Leave-Réglages confirmation ------------------------------------
+        Rectangle {
+            anchors.fill: parent
+            visible: window.showLeaveConfirm
+            color: Qt.rgba(6 / 255, 9 / 255, 12 / 255, 0.88)
+            z: 50
+
+            MouseArea { anchors.fill: parent }
+
+            Rectangle {
+                width: 460
+                height: leaveCol.implicitHeight + 48
+                anchors.centerIn: parent
+                radius: 8
+                color: theme.pn
+                border.color: theme.ln
+                border.width: 1
+
+                ColumnLayout {
+                    id: leaveCol
+                    anchors.fill: parent
+                    anchors.margins: 24
+                    spacing: 18
+
+                    Text {
+                        text: "Modifications non envoyées"
+                        color: theme.tx
+                        font.family: theme.sans
+                        font.pixelSize: 20
+                        font.weight: Font.Bold
+                    }
+                    Text {
+                        text: "Envoyer les nouveaux réglages à la carte avant de continuer ?"
+                        color: theme.mt
+                        font.family: theme.sans
+                        font.pixelSize: 14
+                        wrapMode: Text.WordWrap
+                        Layout.fillWidth: true
+                    }
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: 12
+                        Rectangle {
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 56
+                            radius: 5
+                            color: "transparent"
+                            border.color: theme.ln
+                            border.width: 1
+                            Text {
+                                anchors.centerIn: parent
+                                text: "Annuler"
+                                color: theme.mt
+                                font.family: theme.sans
+                                font.pixelSize: 15
+                                font.weight: Font.DemiBold
+                            }
+                            MouseArea { anchors.fill: parent; onClicked: window.cancelLeaveConfirm() }
+                        }
+                        Rectangle {
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 56
+                            radius: 5
+                            color: theme.accent
+                            Text {
+                                anchors.centerIn: parent
+                                text: "Envoyer"
+                                color: "#08222f"
+                                font.family: theme.sans
+                                font.pixelSize: 15
+                                font.weight: Font.Bold
+                            }
+                            MouseArea { anchors.fill: parent; onClicked: window.confirmLeaveAndSend() }
+                        }
                     }
                 }
             }
