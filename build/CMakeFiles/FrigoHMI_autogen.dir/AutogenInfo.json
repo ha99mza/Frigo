@@ -1190,6 +1190,12 @@
 			"MU",
 			"UVLADIE3JM/moc_historystore.cpp",
 			null
+		],
+		[
+			"C:/Users/hlwad/Desktop/Frigo/src/networkmanager.h",
+			"MU",
+			"UVLADIE3JM/moc_networkmanager.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -1303,7 +1309,8 @@
 		[ "C:/Users/hlwad/Desktop/Frigo/src/frigoconfig.cpp", "MU", null ],
 		[ "C:/Users/hlwad/Desktop/Frigo/src/frigocontroller.cpp", "MU", null ],
 		[ "C:/Users/hlwad/Desktop/Frigo/src/historystore.cpp", "MU", null ],
-		[ "C:/Users/hlwad/Desktop/Frigo/src/main.cpp", "MU", null ]
+		[ "C:/Users/hlwad/Desktop/Frigo/src/main.cpp", "MU", null ],
+		[ "C:/Users/hlwad/Desktop/Frigo/src/networkmanager.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

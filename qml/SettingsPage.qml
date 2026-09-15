@@ -11,8 +11,6 @@ Item {
     signal locked
     signal enterMaintenance
 
-    property bool wifiOn: true
-
     RowLayout {
         anchors.fill: parent
         spacing: 0
@@ -176,7 +174,7 @@ Item {
                     }
                 }
 
-                // --- Réseau (stub) ----------------------------------------
+                // --- Réseau (nmcli / NetworkManager) -----------------------
                 ColumnLayout {
                     visible: root.setTab === "net"
                     Layout.fillWidth: true
@@ -199,7 +197,10 @@ Item {
                                 spacing: 3
                                 Text { text: "Wi-Fi"; color: theme.tx; font.family: theme.sans; font.pixelSize: 18; font.weight: Font.DemiBold }
                                 Text {
-                                    text: root.wifiOn ? "Connecté à FROID-TECH · signal −52 dBm" : "Interface désactivée"
+                                    text: !netmgr.available ? "NetworkManager (nmcli) introuvable"
+                                          : !netmgr.wifiEnabled ? "Interface désactivée"
+                                          : netmgr.wifiConnected ? "Connecté à " + netmgr.ssid + " · signal " + netmgr.signalStrength + " %"
+                                          : "Activée, non connecté"
                                     color: theme.mt; font.family: theme.sans; font.pixelSize: 13
                                 }
                             }
@@ -207,21 +208,26 @@ Item {
                                 Layout.preferredWidth: 120
                                 Layout.preferredHeight: 64
                                 radius: 5
-                                color: root.wifiOn ? theme.accent : theme.bg
+                                opacity: netmgr.available ? 1 : 0.4
+                                color: netmgr.wifiEnabled ? theme.accent : theme.bg
                                 Text {
                                     anchors.centerIn: parent
-                                    text: root.wifiOn ? "ACTIF" : "ARRÊT"
+                                    text: netmgr.wifiEnabled ? "ACTIF" : "ARRÊT"
                                     font.family: theme.sans; font.pixelSize: 17; font.weight: Font.Bold
-                                    color: root.wifiOn ? "#08222f" : theme.mt
+                                    color: netmgr.wifiEnabled ? "#08222f" : theme.mt
                                 }
-                                MouseArea { anchors.fill: parent; onClicked: root.wifiOn = !root.wifiOn }
+                                MouseArea {
+                                    anchors.fill: parent
+                                    enabled: netmgr.available
+                                    onClicked: netmgr.setWifiEnabled(!netmgr.wifiEnabled)
+                                }
                             }
                         }
                     }
 
                     Rectangle {
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 150
+                        Layout.preferredHeight: 190
                         radius: 6
                         color: theme.pn
                         border.color: theme.ln
@@ -234,11 +240,11 @@ Item {
                             columnSpacing: 24
                             Repeater {
                                 model: [
-                                    { k: "Adresse IP", v: root.wifiOn ? "192.168.1.47" : "—" },
-                                    { k: "Réseau (SSID)", v: root.wifiOn ? "FROID-TECH" : "—" },
-                                    { k: "Masque", v: root.wifiOn ? "255.255.255.0" : "—" },
-                                    { k: "Passerelle", v: root.wifiOn ? "192.168.1.1" : "—" },
-                                    { k: "Adresse MAC", v: "A4:CF:12:9E:07:3B" },
+                                    { k: "Adresse IP", v: netmgr.wifiConnected ? netmgr.ipAddress : "—" },
+                                    { k: "Réseau (SSID)", v: netmgr.wifiConnected ? netmgr.ssid : "—" },
+                                    { k: "Masque", v: netmgr.wifiConnected ? netmgr.subnetMask : "—" },
+                                    { k: "Passerelle", v: netmgr.wifiConnected ? netmgr.gateway : "—" },
+                                    { k: "Adresse MAC", v: netmgr.macAddress || "—" },
                                     { k: "Mode", v: "DHCP" }
                                 ]
                                 delegate: ColumnLayout {
@@ -258,31 +264,40 @@ Item {
                             Layout.fillWidth: true
                             Layout.preferredHeight: 64
                             radius: 5
+                            opacity: (netmgr.available && !netmgr.busy) ? 1 : 0.4
                             color: theme.pn
                             border.color: theme.ln
                             border.width: 1
-                            Text { anchors.centerIn: parent; text: "Rechercher les réseaux"; color: theme.tx; font.family: theme.sans; font.pixelSize: 16; font.weight: Font.DemiBold }
-                            MouseArea { anchors.fill: parent; onClicked: root.wifiOn = true }
+                            Text {
+                                anchors.centerIn: parent
+                                text: "Rechercher les réseaux"
+                                color: theme.tx; font.family: theme.sans; font.pixelSize: 16; font.weight: Font.DemiBold
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                enabled: netmgr.available && !netmgr.busy
+                                onClicked: netmgr.rescan()
+                            }
                         }
                         Rectangle {
                             Layout.fillWidth: true
                             Layout.preferredHeight: 64
                             radius: 5
+                            opacity: (netmgr.available && netmgr.wifiConnected && !netmgr.busy) ? 1 : 0.4
                             color: "transparent"
                             border.color: theme.accent
                             border.width: 1
-                            Text { anchors.centerIn: parent; text: "Renouveler l'adresse IP"; color: theme.accent; font.family: theme.sans; font.pixelSize: 16; font.weight: Font.DemiBold }
-                            MouseArea { anchors.fill: parent; onClicked: root.wifiOn = true }
+                            Text {
+                                anchors.centerIn: parent
+                                text: netmgr.busy ? "Renouvellement…" : "Renouveler l'adresse IP"
+                                color: theme.accent; font.family: theme.sans; font.pixelSize: 16; font.weight: Font.DemiBold
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                enabled: netmgr.available && netmgr.wifiConnected && !netmgr.busy
+                                onClicked: netmgr.renewIp()
+                            }
                         }
-                    }
-
-                    Text {
-                        Layout.fillWidth: true
-                        text: "Page Wi-Fi provisoire — non reliée au matériel réseau réel pour l'instant."
-                        color: theme.mt
-                        font.family: theme.sans
-                        font.pixelSize: 12
-                        wrapMode: Text.WordWrap
                     }
                 }
 

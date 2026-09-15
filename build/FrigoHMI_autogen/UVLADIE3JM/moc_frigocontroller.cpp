@@ -68,9 +68,7 @@ template <> constexpr inline auto FrigoController::qt_create_metaobjectdata<qt_m
         "onTransportConnectionChanged",
         "connected",
         "onHistoryTick",
-        "requestConfigFromBoard",
-        "writeConfigToBoard",
-        "verifySignature",
+        "processNextQueuedWrite",
         "acknowledgeDoorAlarm",
         "acknowledgeAllAlarms",
         "commandMaintenanceMode",
@@ -189,134 +187,130 @@ template <> constexpr inline auto FrigoController::qt_create_metaobjectdata<qt_m
         }}),
         // Slot 'onHistoryTick'
         QtMocHelpers::SlotData<void()>(29, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Method 'requestConfigFromBoard'
-        QtMocHelpers::MethodData<void()>(30, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'writeConfigToBoard'
-        QtMocHelpers::MethodData<void()>(31, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'verifySignature'
-        QtMocHelpers::MethodData<void()>(32, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'processNextQueuedWrite'
+        QtMocHelpers::SlotData<void()>(30, 2, QMC::AccessPrivate, QMetaType::Void),
         // Method 'acknowledgeDoorAlarm'
-        QtMocHelpers::MethodData<void()>(33, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(31, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'acknowledgeAllAlarms'
-        QtMocHelpers::MethodData<void()>(34, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(32, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'commandMaintenanceMode'
-        QtMocHelpers::MethodData<void(bool)>(35, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 36 },
+        QtMocHelpers::MethodData<void(bool)>(33, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 34 },
         }}),
         // Method 'toggleFanOverride'
-        QtMocHelpers::MethodData<void(int)>(37, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 38 },
+        QtMocHelpers::MethodData<void(int)>(35, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 36 },
         }}),
         // Method 'toggleRelayOverride'
-        QtMocHelpers::MethodData<void(const QString &)>(39, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 40 },
+        QtMocHelpers::MethodData<void(const QString &)>(37, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 38 },
         }}),
         // Method 'tryUnlockSettings'
-        QtMocHelpers::MethodData<bool(const QString &)>(41, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 42 },
+        QtMocHelpers::MethodData<bool(const QString &)>(39, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 40 },
         }}),
         // Method 'lockSettings'
-        QtMocHelpers::MethodData<void()>(43, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(41, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'changeSettingsPin'
-        QtMocHelpers::MethodData<bool(const QString &)>(44, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 45 },
+        QtMocHelpers::MethodData<bool(const QString &)>(42, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 43 },
         }}),
         // Method 'temperatureSeries'
-        QtMocHelpers::MethodData<QVariantList(const QString &) const>(46, 2, QMC::AccessPublic, 0x80000000 | 47, {{
-            { QMetaType::QString, 48 },
+        QtMocHelpers::MethodData<QVariantList(const QString &) const>(44, 2, QMC::AccessPublic, 0x80000000 | 45, {{
+            { QMetaType::QString, 46 },
         }}),
         // Method 'rangeStats'
-        QtMocHelpers::MethodData<QVariantMap(const QString &) const>(49, 2, QMC::AccessPublic, 0x80000000 | 50, {{
-            { QMetaType::QString, 48 },
+        QtMocHelpers::MethodData<QVariantMap(const QString &) const>(47, 2, QMC::AccessPublic, 0x80000000 | 48, {{
+            { QMetaType::QString, 46 },
         }}),
         // Method 'lastDefrostEvent'
-        QtMocHelpers::MethodData<qint64() const>(51, 2, QMC::AccessPublic, QMetaType::LongLong),
+        QtMocHelpers::MethodData<qint64() const>(49, 2, QMC::AccessPublic, QMetaType::LongLong),
         // Method 'disconnectCan'
-        QtMocHelpers::MethodData<void()>(52, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(50, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'connected'
         QtMocHelpers::PropertyData<bool>(28, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
         // property 'lastError'
-        QtMocHelpers::PropertyData<QString>(53, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
+        QtMocHelpers::PropertyData<QString>(51, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
         // property 'backendLabel'
-        QtMocHelpers::PropertyData<QString>(54, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<QString>(52, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'temp1'
-        QtMocHelpers::PropertyData<double>(55, QMetaType::Double, QMC::DefaultPropertyFlags, 3),
+        QtMocHelpers::PropertyData<double>(53, QMetaType::Double, QMC::DefaultPropertyFlags, 3),
         // property 'temp2'
-        QtMocHelpers::PropertyData<double>(56, QMetaType::Double, QMC::DefaultPropertyFlags, 4),
+        QtMocHelpers::PropertyData<double>(54, QMetaType::Double, QMC::DefaultPropertyFlags, 4),
         // property 'temp3'
-        QtMocHelpers::PropertyData<double>(57, QMetaType::Double, QMC::DefaultPropertyFlags, 5),
+        QtMocHelpers::PropertyData<double>(55, QMetaType::Double, QMC::DefaultPropertyFlags, 5),
         // property 'tempEva'
-        QtMocHelpers::PropertyData<double>(58, QMetaType::Double, QMC::DefaultPropertyFlags, 6),
+        QtMocHelpers::PropertyData<double>(56, QMetaType::Double, QMC::DefaultPropertyFlags, 6),
         // property 'tempAverage'
-        QtMocHelpers::PropertyData<double>(59, QMetaType::Double, QMC::DefaultPropertyFlags, 7),
+        QtMocHelpers::PropertyData<double>(57, QMetaType::Double, QMC::DefaultPropertyFlags, 7),
         // property 'batteryVoltage'
-        QtMocHelpers::PropertyData<double>(60, QMetaType::Double, QMC::DefaultPropertyFlags, 8),
+        QtMocHelpers::PropertyData<double>(58, QMetaType::Double, QMC::DefaultPropertyFlags, 8),
         // property 'doorOpen'
-        QtMocHelpers::PropertyData<bool>(61, QMetaType::Bool, QMC::DefaultPropertyFlags, 9),
+        QtMocHelpers::PropertyData<bool>(59, QMetaType::Bool, QMC::DefaultPropertyFlags, 9),
         // property 'fan1On'
-        QtMocHelpers::PropertyData<bool>(62, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<bool>(60, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'fan2On'
-        QtMocHelpers::PropertyData<bool>(63, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<bool>(61, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'fan3On'
-        QtMocHelpers::PropertyData<bool>(64, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<bool>(62, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'fan4On'
-        QtMocHelpers::PropertyData<bool>(65, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<bool>(63, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'fan5On'
-        QtMocHelpers::PropertyData<bool>(66, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<bool>(64, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'lampOn'
-        QtMocHelpers::PropertyData<bool>(67, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<bool>(65, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'compressorOn'
-        QtMocHelpers::PropertyData<bool>(68, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<bool>(66, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'defrostFanOn'
-        QtMocHelpers::PropertyData<bool>(69, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<bool>(67, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'doorRelayOn'
-        QtMocHelpers::PropertyData<bool>(70, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<bool>(68, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'tempMinC'
-        QtMocHelpers::PropertyData<double>(71, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(69, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'tempMaxC'
-        QtMocHelpers::PropertyData<double>(72, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(70, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'tempEvaMinC'
-        QtMocHelpers::PropertyData<double>(73, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(71, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'defrostIntervalHours'
-        QtMocHelpers::PropertyData<double>(74, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(72, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'defrostDurationMinutes'
-        QtMocHelpers::PropertyData<double>(75, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(73, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'defrostTimeoutMinutes'
-        QtMocHelpers::PropertyData<double>(76, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(74, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'antiShortCycleDelayMinutes'
-        QtMocHelpers::PropertyData<double>(77, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(75, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'tempLimitTimeoutMinutes'
-        QtMocHelpers::PropertyData<double>(78, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(76, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'doorAlarmDelaySeconds'
-        QtMocHelpers::PropertyData<double>(79, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(77, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'offsetCap1C'
-        QtMocHelpers::PropertyData<double>(80, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(78, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'offsetCap2C'
-        QtMocHelpers::PropertyData<double>(81, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(79, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'offsetCap3C'
-        QtMocHelpers::PropertyData<double>(82, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(80, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'offsetEvaC'
-        QtMocHelpers::PropertyData<double>(83, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
+        QtMocHelpers::PropertyData<double>(81, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 11),
         // property 'maintenanceMode'
-        QtMocHelpers::PropertyData<bool>(84, QMetaType::Bool, QMC::DefaultPropertyFlags, 11),
+        QtMocHelpers::PropertyData<bool>(82, QMetaType::Bool, QMC::DefaultPropertyFlags, 11),
         // property 'configDirty'
-        QtMocHelpers::PropertyData<bool>(85, QMetaType::Bool, QMC::DefaultPropertyFlags, 12),
+        QtMocHelpers::PropertyData<bool>(83, QMetaType::Bool, QMC::DefaultPropertyFlags, 12),
         // property 'configSynced'
-        QtMocHelpers::PropertyData<bool>(86, QMetaType::Bool, QMC::DefaultPropertyFlags, 13),
+        QtMocHelpers::PropertyData<bool>(84, QMetaType::Bool, QMC::DefaultPropertyFlags, 13),
         // property 'localSignature'
-        QtMocHelpers::PropertyData<int>(87, QMetaType::Int, QMC::DefaultPropertyFlags, 11),
+        QtMocHelpers::PropertyData<int>(85, QMetaType::Int, QMC::DefaultPropertyFlags, 11),
         // property 'boardSignature'
-        QtMocHelpers::PropertyData<int>(88, QMetaType::Int, QMC::DefaultPropertyFlags, 14),
+        QtMocHelpers::PropertyData<int>(86, QMetaType::Int, QMC::DefaultPropertyFlags, 14),
         // property 'errorLog'
-        QtMocHelpers::PropertyData<ErrorLogModel*>(89, 0x80000000 | 90, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
+        QtMocHelpers::PropertyData<ErrorLogModel*>(87, 0x80000000 | 88, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
         // property 'darkTheme'
-        QtMocHelpers::PropertyData<bool>(91, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 15),
+        QtMocHelpers::PropertyData<bool>(89, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 15),
         // property 'unitName'
-        QtMocHelpers::PropertyData<QString>(92, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 16),
+        QtMocHelpers::PropertyData<QString>(90, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 16),
         // property 'settingsUnlocked'
-        QtMocHelpers::PropertyData<bool>(93, QMetaType::Bool, QMC::DefaultPropertyFlags, 17),
+        QtMocHelpers::PropertyData<bool>(91, QMetaType::Bool, QMC::DefaultPropertyFlags, 17),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -361,26 +355,24 @@ void FrigoController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 20: _t->onTransportError((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         case 21: _t->onTransportConnectionChanged((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
         case 22: _t->onHistoryTick(); break;
-        case 23: _t->requestConfigFromBoard(); break;
-        case 24: _t->writeConfigToBoard(); break;
-        case 25: _t->verifySignature(); break;
-        case 26: _t->acknowledgeDoorAlarm(); break;
-        case 27: _t->acknowledgeAllAlarms(); break;
-        case 28: _t->commandMaintenanceMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 29: _t->toggleFanOverride((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 30: _t->toggleRelayOverride((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 31: { bool _r = _t->tryUnlockSettings((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 23: _t->processNextQueuedWrite(); break;
+        case 24: _t->acknowledgeDoorAlarm(); break;
+        case 25: _t->acknowledgeAllAlarms(); break;
+        case 26: _t->commandMaintenanceMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 27: _t->toggleFanOverride((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 28: _t->toggleRelayOverride((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 29: { bool _r = _t->tryUnlockSettings((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 32: _t->lockSettings(); break;
-        case 33: { bool _r = _t->changeSettingsPin((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 30: _t->lockSettings(); break;
+        case 31: { bool _r = _t->changeSettingsPin((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 34: { QVariantList _r = _t->temperatureSeries((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 32: { QVariantList _r = _t->temperatureSeries((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 35: { QVariantMap _r = _t->rangeStats((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 33: { QVariantMap _r = _t->rangeStats((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QVariantMap*>(_a[0]) = std::move(_r); }  break;
-        case 36: { qint64 _r = _t->lastDefrostEvent();
+        case 34: { qint64 _r = _t->lastDefrostEvent();
             if (_a[0]) *reinterpret_cast<qint64*>(_a[0]) = std::move(_r); }  break;
-        case 37: _t->disconnectCan(); break;
+        case 35: _t->disconnectCan(); break;
         default: ;
         }
     }
@@ -520,14 +512,14 @@ int FrigoController::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 38)
+        if (_id < 36)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 38;
+        _id -= 36;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 38)
+        if (_id < 36)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 38;
+        _id -= 36;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

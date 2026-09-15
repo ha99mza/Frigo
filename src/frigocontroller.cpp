@@ -11,9 +11,13 @@ FrigoController::FrigoController(QObject *parent)
     : QObject(parent)
     , m_settings(QStringLiteral("Frigo"), QStringLiteral("FrigoHMI"))
 {
-    m_signatureCheckTimer.setSingleShot(true);
-    m_signatureCheckTimer.setInterval(300);
-    connect(&m_signatureCheckTimer, &QTimer::timeout, this, &FrigoController::verifySignature);
+    m_connectSignatureCheckTimer.setSingleShot(true);
+    m_connectSignatureCheckTimer.setInterval(300);
+    connect(&m_connectSignatureCheckTimer, &QTimer::timeout, this, &FrigoController::verifySignatureOnConnect);
+
+    m_writeSpacingTimer.setSingleShot(true);
+    m_writeSpacingTimer.setInterval(100);
+    connect(&m_writeSpacingTimer, &QTimer::timeout, this, &FrigoController::processNextQueuedWrite);
 
     m_darkTheme = m_settings.value(QStringLiteral("ui/darkTheme"), true).toBool();
     m_unitName = m_settings.value(QStringLiteral("ui/unitName"), m_unitName).toString();
@@ -98,6 +102,7 @@ void FrigoController::markConfigDirty()
         emit configSyncedChanged();
     }
     emit configChanged();
+    queueConfigDiff();
 }
 
 void FrigoController::setTempMinC(double v)
@@ -310,7 +315,7 @@ void FrigoController::onTransportConnectionChanged(bool connected)
     m_connected = connected;
     emit connectedChanged();
     if (connected)
-        requestConfigFromBoard();
+        m_connectSignatureCheckTimer.start();
 }
 
 // --- Frame handling --------------------------------------------------------
@@ -408,6 +413,10 @@ void FrigoController::handleConfigFrame(quint32 id, const QByteArray &payload)
             m_configSynced = synced;
             emit configSyncedChanged();
         }
+        // The board's signature disagrees with what we compute locally —
+        // pull every register so our copy matches what it actually holds.
+        if (!synced)
+            requestAllConfigFromBoard();
         return;
     }
 
@@ -427,28 +436,49 @@ void FrigoController::handleConfigFrame(quint32 id, const QByteArray &payload)
         return;
 
     switch (id) {
-    case Id_CfgTempMin:             m_config.tempMin = decodeInt32LE(payload); break;
-    case Id_CfgTempMax:             m_config.tempMax = decodeInt32LE(payload); break;
-    case Id_CfgTempEvaMin:          m_config.tempEvaMin = decodeInt32LE(payload); break;
-    case Id_CfgDefrostInterval:     m_config.defrostInterval = decodeUInt32LE(payload); break;
-    case Id_CfgDefrostDuration:     m_config.defrostDuration = decodeUInt32LE(payload); break;
-    case Id_CfgDefrostTimeout:      m_config.defrostTimeout = decodeUInt32LE(payload); break;
-    case Id_CfgAntiShortCycleDelay: m_config.antiShortCycleDelay = decodeUInt32LE(payload); break;
-    case Id_CfgTempLimitTimeout:    m_config.tempLimitTimeout = decodeUInt32LE(payload); break;
-    case Id_CfgDoorAlarmDelay:      m_config.doorAlarmDelay = decodeUInt32LE(payload); break;
-    case Id_CfgOffsetCap1:          m_config.offsetCap1 = decodeInt32LE(payload); break;
-    case Id_CfgOffsetCap2:          m_config.offsetCap2 = decodeInt32LE(payload); break;
-    case Id_CfgOffsetCap3:          m_config.offsetCap3 = decodeInt32LE(payload); break;
-    case Id_CfgOffsetEva:           m_config.offsetEva = decodeInt32LE(payload); break;
+    case Id_CfgTempMin:             m_config.tempMin = m_boardConfig.tempMin = decodeInt32LE(payload); break;
+    case Id_CfgTempMax:             m_config.tempMax = m_boardConfig.tempMax = decodeInt32LE(payload); break;
+    case Id_CfgTempEvaMin:          m_config.tempEvaMin = m_boardConfig.tempEvaMin = decodeInt32LE(payload); break;
+    case Id_CfgDefrostInterval:     m_config.defrostInterval = m_boardConfig.defrostInterval = decodeUInt32LE(payload); break;
+    case Id_CfgDefrostDuration:     m_config.defrostDuration = m_boardConfig.defrostDuration = decodeUInt32LE(payload); break;
+    case Id_CfgDefrostTimeout:      m_config.defrostTimeout = m_boardConfig.defrostTimeout = decodeUInt32LE(payload); break;
+    case Id_CfgAntiShortCycleDelay: m_config.antiShortCycleDelay = m_boardConfig.antiShortCycleDelay = decodeUInt32LE(payload); break;
+    case Id_CfgTempLimitTimeout:    m_config.tempLimitTimeout = m_boardConfig.tempLimitTimeout = decodeUInt32LE(payload); break;
+    case Id_CfgDoorAlarmDelay:      m_config.doorAlarmDelay = m_boardConfig.doorAlarmDelay = decodeUInt32LE(payload); break;
+    case Id_CfgOffsetCap1:          m_config.offsetCap1 = m_boardConfig.offsetCap1 = decodeInt32LE(payload); break;
+    case Id_CfgOffsetCap2:          m_config.offsetCap2 = m_boardConfig.offsetCap2 = decodeInt32LE(payload); break;
+    case Id_CfgOffsetCap3:          m_config.offsetCap3 = m_boardConfig.offsetCap3 = decodeInt32LE(payload); break;
+    case Id_CfgOffsetEva:           m_config.offsetEva = m_boardConfig.offsetEva = decodeInt32LE(payload); break;
     case Id_CfgRtcTime:             m_config.rtcTime = decodeUInt32LE(payload); break;
     default: return;
     }
     emit configChanged();
 }
 
-// --- Actions ---------------------------------------------------------------
+// --- Startup sync -----------------------------------------------------------
+//
+// On connect: RTR the commit signature (0x30F). If it matches what we
+// compute from our locally-held settings, we're done — no need to touch the
+// bus further. If it doesn't, pull every individual register so our copy
+// matches the board's.
 
-void FrigoController::requestConfigFromBoard()
+void FrigoController::verifySignatureOnConnect()
+{
+    if (!m_transport || !m_connected)
+        return;
+    QCanBusFrame f(Id_CfgCommitSignature, QByteArray());
+    f.setFrameType(QCanBusFrame::RemoteRequestFrame);
+    m_transport->writeFrame(f);
+
+    // Not part of the signature scheme (0x30E isn't summed into it), but
+    // still worth a fresh read at connect so the UI reflects whatever state
+    // the board is actually in right now.
+    QCanBusFrame mf(Id_CfgMaintenanceMode, QByteArray());
+    mf.setFrameType(QCanBusFrame::RemoteRequestFrame);
+    m_transport->writeFrame(mf);
+}
+
+void FrigoController::requestAllConfigFromBoard()
 {
     if (!m_transport || !m_connected)
         return;
@@ -462,54 +492,87 @@ void FrigoController::requestConfigFromBoard()
     for (quint32 id : { Id_CfgTempMin, Id_CfgTempMax, Id_CfgTempEvaMin, Id_CfgDefrostInterval,
                          Id_CfgDefrostDuration, Id_CfgDefrostTimeout, Id_CfgAntiShortCycleDelay,
                          Id_CfgTempLimitTimeout, Id_CfgDoorAlarmDelay, Id_CfgOffsetCap1,
-                         Id_CfgOffsetCap2, Id_CfgOffsetCap3, Id_CfgOffsetEva, Id_CfgMaintenanceMode }) {
+                         Id_CfgOffsetCap2, Id_CfgOffsetCap3, Id_CfgOffsetEva }) {
         request(id);
     }
-    requestSignatureDelayed();
+    // We're about to adopt whatever the board reports register-by-register,
+    // so once those responses land we'll match it by definition.
+    if (!m_configSynced) {
+        m_configSynced = true;
+        emit configSyncedChanged();
+    }
 }
 
-void FrigoController::writeConfigToBoard()
+// --- Per-edit send ------------------------------------------------------
+//
+// Called after every settings change. Only the registers that actually
+// differ from what we believe the board holds (m_boardConfig) are queued,
+// spaced ~100ms apart; once the queue drains, the commit signature is
+// recomputed from the new values and pushed to 0x30F.
+
+void FrigoController::queueConfigDiff()
 {
     if (!m_transport || !m_connected)
         return;
 
-    auto send = [this](quint32 id, const QByteArray &payload) {
-        m_transport->writeFrame(QCanBusFrame(id, payload));
+    bool any = false;
+    auto diffI32 = [&](quint32 id, qint32 &board, qint32 local) {
+        if (board != local) { enqueueWrite(id, encodeInt32LE(local)); board = local; any = true; }
+    };
+    auto diffU32 = [&](quint32 id, quint32 &board, quint32 local) {
+        if (board != local) { enqueueWrite(id, encodeUInt32LE(local)); board = local; any = true; }
     };
 
-    send(Id_CfgTempMin, encodeInt32LE(m_config.tempMin));
-    send(Id_CfgTempMax, encodeInt32LE(m_config.tempMax));
-    send(Id_CfgTempEvaMin, encodeInt32LE(m_config.tempEvaMin));
-    send(Id_CfgDefrostInterval, encodeUInt32LE(m_config.defrostInterval));
-    send(Id_CfgDefrostDuration, encodeUInt32LE(m_config.defrostDuration));
-    send(Id_CfgDefrostTimeout, encodeUInt32LE(m_config.defrostTimeout));
-    send(Id_CfgAntiShortCycleDelay, encodeUInt32LE(m_config.antiShortCycleDelay));
-    send(Id_CfgTempLimitTimeout, encodeUInt32LE(m_config.tempLimitTimeout));
-    send(Id_CfgDoorAlarmDelay, encodeUInt32LE(m_config.doorAlarmDelay));
-    send(Id_CfgOffsetCap1, encodeInt32LE(m_config.offsetCap1));
-    send(Id_CfgOffsetCap2, encodeInt32LE(m_config.offsetCap2));
-    send(Id_CfgOffsetCap3, encodeInt32LE(m_config.offsetCap3));
-    send(Id_CfgOffsetEva, encodeInt32LE(m_config.offsetEva));
+    diffI32(Id_CfgTempMin, m_boardConfig.tempMin, m_config.tempMin);
+    diffI32(Id_CfgTempMax, m_boardConfig.tempMax, m_config.tempMax);
+    diffI32(Id_CfgTempEvaMin, m_boardConfig.tempEvaMin, m_config.tempEvaMin);
+    diffU32(Id_CfgDefrostInterval, m_boardConfig.defrostInterval, m_config.defrostInterval);
+    diffU32(Id_CfgDefrostDuration, m_boardConfig.defrostDuration, m_config.defrostDuration);
+    diffU32(Id_CfgDefrostTimeout, m_boardConfig.defrostTimeout, m_config.defrostTimeout);
+    diffU32(Id_CfgAntiShortCycleDelay, m_boardConfig.antiShortCycleDelay, m_config.antiShortCycleDelay);
+    diffU32(Id_CfgTempLimitTimeout, m_boardConfig.tempLimitTimeout, m_config.tempLimitTimeout);
+    diffU32(Id_CfgDoorAlarmDelay, m_boardConfig.doorAlarmDelay, m_config.doorAlarmDelay);
+    diffI32(Id_CfgOffsetCap1, m_boardConfig.offsetCap1, m_config.offsetCap1);
+    diffI32(Id_CfgOffsetCap2, m_boardConfig.offsetCap2, m_config.offsetCap2);
+    diffI32(Id_CfgOffsetCap3, m_boardConfig.offsetCap3, m_config.offsetCap3);
+    diffI32(Id_CfgOffsetEva, m_boardConfig.offsetEva, m_config.offsetEva);
 
-    if (m_configDirty) {
-        m_configDirty = false;
-        emit configDirtyChanged();
+    if (any) {
+        m_pendingSignaturePush = true;
+        if (m_configDirty) {
+            m_configDirty = false;
+            emit configDirtyChanged();
+        }
     }
-    requestSignatureDelayed();
 }
 
-void FrigoController::requestSignatureDelayed()
+void FrigoController::enqueueWrite(quint32 id, const QByteArray &payload)
 {
-    m_signatureCheckTimer.start();
+    m_writeQueue.enqueue({ id, payload });
+    if (!m_writeQueueActive) {
+        m_writeQueueActive = true;
+        processNextQueuedWrite();
+    }
 }
 
-void FrigoController::verifySignature()
+void FrigoController::processNextQueuedWrite()
 {
-    if (!m_transport || !m_connected)
+    if (m_writeQueue.isEmpty()) {
+        m_writeQueueActive = false;
+        if (m_pendingSignaturePush) {
+            m_pendingSignaturePush = false;
+            if (m_transport && m_connected) {
+                m_transport->writeFrame(QCanBusFrame(Id_CfgCommitSignature,
+                                                      encodeUInt16LE(m_config.computeSignature())));
+            }
+        }
         return;
-    QCanBusFrame f(Id_CfgCommitSignature, QByteArray());
-    f.setFrameType(QCanBusFrame::RemoteRequestFrame);
-    m_transport->writeFrame(f);
+    }
+
+    const QueuedFrame f = m_writeQueue.dequeue();
+    if (m_transport && m_connected)
+        m_transport->writeFrame(QCanBusFrame(f.id, f.payload));
+    m_writeSpacingTimer.start();
 }
 
 void FrigoController::acknowledgeDoorAlarm()

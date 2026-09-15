@@ -8,7 +8,7 @@
                         {
                             "codegenResult": 2,
                             "column": 39,
-                            "durationMicroseconds": 4000,
+                            "durationMicroseconds": 0,
                             "functionName": "theme",
                             "line": 7,
                             "message": "Cannot load property theme from QQuickWindowAttached::window with type QQuickWindow."
@@ -32,7 +32,7 @@
                         {
                             "codegenResult": 0,
                             "column": 23,
-                            "durationMicroseconds": 3000,
+                            "durationMicroseconds": 0,
                             "functionName": "fill",
                             "line": 32,
                             "message": ""
@@ -104,7 +104,7 @@
                         {
                             "codegenResult": 2,
                             "column": 20,
-                            "durationMicroseconds": 0,
+                            "durationMicroseconds": 1000,
                             "functionName": "model",
                             "line": 63,
                             "message": "Cannot access value for name frigo"

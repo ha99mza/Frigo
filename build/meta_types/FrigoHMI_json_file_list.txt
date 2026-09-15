@@ -3,3 +3,4 @@ C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI_autogen/include/../UVLADIE3JM/moc_ca
 C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI_autogen/include/../UVLADIE3JM/moc_errorlogmodel.cpp.json
 C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI_autogen/include/../UVLADIE3JM/moc_frigocontroller.cpp.json
 C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI_autogen/include/../UVLADIE3JM/moc_historystore.cpp.json
+C:/Users/hlwad/Desktop/Frigo/build/FrigoHMI_autogen/include/../UVLADIE3JM/moc_networkmanager.cpp.json

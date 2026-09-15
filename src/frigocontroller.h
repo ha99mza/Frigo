@@ -6,6 +6,7 @@
 
 #include <QCanBusFrame>
 #include <QObject>
+#include <QQueue>
 #include <QSettings>
 #include <QStringList>
 #include <QTimer>
@@ -142,10 +143,6 @@ public:
     bool settingsUnlocked() const { return m_settingsUnlocked; }
 
     // --- QML-invokable actions -------------------------------------------
-    Q_INVOKABLE void requestConfigFromBoard();
-    Q_INVOKABLE void writeConfigToBoard();
-    Q_INVOKABLE void verifySignature();
-
     Q_INVOKABLE void acknowledgeDoorAlarm();
     // Marks every currently-active log entry as cleared; also sends the
     // CAN door-alarm-clear command if a door alarm is among them (that's
@@ -210,13 +207,30 @@ private slots:
     void onTransportError(const QString &message);
     void onTransportConnectionChanged(bool connected);
     void onHistoryTick();
+    void processNextQueuedWrite();
 
 private:
+    struct QueuedFrame { quint32 id; QByteArray payload; };
+
     void setTransport(ICanTransport *transport, const QString &label);
     void handleConfigFrame(quint32 id, const QByteArray &payload);
-    void requestSignatureDelayed();
     void markConfigDirty();
     void sendRelayMasks();
+
+    // Startup sync: verify our locally-held settings still match the board
+    // before trusting them, per the documented handshake — RTR the commit
+    // signature (0x30F), and only pull every individual register (0x300..
+    // 0x30C) if it doesn't match what we compute locally.
+    void verifySignatureOnConnect();
+    void requestAllConfigFromBoard();
+
+    // Per-edit send: called after every settings change. Diffs m_config
+    // against m_boardConfig (the last value we believe the board holds),
+    // enqueues a write for just the registers that actually changed, then
+    // once the queue drains, recomputes and pushes the commit signature.
+    // Frames are spaced ~100ms apart so the board isn't flooded.
+    void queueConfigDiff();
+    void enqueueWrite(quint32 id, const QByteArray &payload);
 
     std::unique_ptr<ICanTransport> m_transport;
     bool m_connected = false;
@@ -232,12 +246,18 @@ private:
     quint8 m_relayPack1 = 0;
     quint8 m_relayPack2 = 0;
 
-    FrigoConfig m_config;
+    FrigoConfig m_config;         // app's current/desired values (what the UI shows)
+    FrigoConfig m_boardConfig;    // last value we believe the board holds (diff baseline)
     bool m_configDirty = false;
     bool m_configSynced = false;
 
+    QQueue<QueuedFrame> m_writeQueue;
+    QTimer m_writeSpacingTimer;   // ~100ms between queued config-register writes
+    bool m_writeQueueActive = false;
+    bool m_pendingSignaturePush = false;
+
     ErrorLogModel m_errorLog;
-    QTimer m_signatureCheckTimer;
+    QTimer m_connectSignatureCheckTimer; // brief delay after connecting, then verify signature
 
     QSettings m_settings;
     bool m_darkTheme = true;

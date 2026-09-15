@@ -141,7 +141,7 @@ ApplicationWindow {
                         border.width: 1
                         Text {
                             anchors.centerIn: parent
-                            text: theme.dark ? "JOUR" : "NUIT"
+                            text: theme.dark ? "CLAIR" : "SOMBRE"
                             font.pixelSize: 13
                             font.weight: Font.DemiBold
                             font.family: theme.sans

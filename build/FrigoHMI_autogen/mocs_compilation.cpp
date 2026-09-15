@@ -4,3 +4,4 @@
 #include "UVLADIE3JM/moc_errorlogmodel.cpp"
 #include "UVLADIE3JM/moc_frigocontroller.cpp"
 #include "UVLADIE3JM/moc_historystore.cpp"
+#include "UVLADIE3JM/moc_networkmanager.cpp"

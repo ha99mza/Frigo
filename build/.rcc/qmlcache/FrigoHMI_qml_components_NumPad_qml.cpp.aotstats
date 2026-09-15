@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 2,
                             "column": 16,
-                            "durationMicroseconds": 0,
+                            "durationMicroseconds": 1000,
                             "functionName": "model",
                             "line": 20,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
@@ -40,7 +40,7 @@
                         {
                             "codegenResult": 0,
                             "column": 47,
-                            "durationMicroseconds": 0,
+                            "durationMicroseconds": 1000,
                             "functionName": "isSpecial",
                             "line": 30,
                             "message": ""

@@ -1,4 +1,5 @@
 #include "frigocontroller.h"
+#include "networkmanager.h"
 
 #include <QCommandLineParser>
 #include <QDirIterator>
@@ -35,6 +36,9 @@ int main(int argc, char *argv[])
 
     FrigoController frigo;
     engine.rootContext()->setContextProperty(QStringLiteral("frigo"), &frigo);
+
+    NetworkManager netManager;
+    engine.rootContext()->setContextProperty(QStringLiteral("netmgr"), &netManager);
 
     // objectCreationFailed() and loadFromModule() are Qt 6.4/6.5+ only; the
     // target board ships Qt 6.2 (LTS), so fall back to the older equivalents

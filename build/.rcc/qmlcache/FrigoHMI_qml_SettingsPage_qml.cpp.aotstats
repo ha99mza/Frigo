@@ -18,7 +18,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 17,
+                            "line": 15,
                             "message": ""
                         },
                         {
@@ -26,7 +26,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 24,
+                            "line": 22,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -34,7 +34,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 27,
+                            "line": 25,
                             "message": ""
                         },
                         {
@@ -42,7 +42,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "model",
-                            "line": 33,
+                            "line": 31,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
                         },
                         {
@@ -50,7 +50,7 @@
                             "column": 52,
                             "durationMicroseconds": 0,
                             "functionName": "on",
-                            "line": 42,
+                            "line": 40,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -58,7 +58,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 46,
+                            "line": 44,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -66,7 +66,7 @@
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 47,
+                            "line": 45,
                             "message": ""
                         },
                         {
@@ -74,7 +74,7 @@
                             "column": 77,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 47,
+                            "line": 45,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -82,7 +82,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 52,
+                            "line": 50,
                             "message": "Cannot access value for name modelData"
                         },
                         {
@@ -90,7 +90,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 56,
+                            "line": 54,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -98,7 +98,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "left",
-                            "line": 49,
+                            "line": 47,
                             "message": ""
                         },
                         {
@@ -106,7 +106,7 @@
                             "column": 53,
                             "durationMicroseconds": 0,
                             "functionName": "verticalCenter",
-                            "line": 51,
+                            "line": 49,
                             "message": ""
                         },
                         {
@@ -114,7 +114,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 53,
+                            "line": 51,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -122,7 +122,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 55,
+                            "line": 53,
                             "message": ""
                         },
                         {
@@ -130,7 +130,7 @@
                             "column": 70,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 58,
+                            "line": 56,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -138,7 +138,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 58,
+                            "line": 56,
                             "message": ""
                         },
                         {
@@ -146,7 +146,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 69,
+                            "line": 67,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -154,7 +154,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 74,
+                            "line": 72,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -162,7 +162,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 72,
+                            "line": 70,
                             "message": ""
                         },
                         {
@@ -170,7 +170,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 75,
+                            "line": 73,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -178,7 +178,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 77,
+                            "line": 75,
                             "message": ""
                         },
                         {
@@ -186,7 +186,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 81,
+                            "line": 79,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -194,7 +194,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 80,
+                            "line": 78,
                             "message": ""
                         },
                         {
@@ -202,7 +202,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "contentWidth",
-                            "line": 92,
+                            "line": 90,
                             "message": "Could not find property \"contentWidth\"."
                         },
                         {
@@ -210,7 +210,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 95,
+                            "line": 93,
                             "message": ""
                         },
                         {
@@ -218,7 +218,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 102,
+                            "line": 100,
                             "message": ""
                         },
                         {
@@ -226,15 +226,39 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "value",
+                            "line": 107,
+                            "message": "Cannot access value for name frigo"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "onDecClicked",
+                            "line": 108,
+                            "message": "Cannot access value for name frigo"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "onIncClicked",
                             "line": 109,
                             "message": "Cannot access value for name frigo"
                         },
                         {
                             "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "value",
+                            "line": 113,
+                            "message": "Cannot access value for name frigo"
+                        },
+                        {
+                            "codegenResult": 2,
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onDecClicked",
-                            "line": 110,
+                            "line": 114,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -242,23 +266,23 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onIncClicked",
-                            "line": 111,
-                            "message": "Cannot access value for name frigo"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "value",
                             "line": 115,
                             "message": "Cannot access value for name frigo"
                         },
                         {
                             "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "value",
+                            "line": 119,
+                            "message": "Cannot access value for name frigo"
+                        },
+                        {
+                            "codegenResult": 2,
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onDecClicked",
-                            "line": 116,
+                            "line": 120,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -266,39 +290,15 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onIncClicked",
-                            "line": 117,
-                            "message": "Cannot access value for name frigo"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "value",
                             "line": 121,
                             "message": "Cannot access value for name frigo"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 0,
-                            "functionName": "onDecClicked",
-                            "line": 122,
-                            "message": "Cannot access value for name frigo"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 0,
-                            "functionName": "onIncClicked",
-                            "line": 123,
-                            "message": "Cannot access value for name frigo"
-                        },
-                        {
-                            "codegenResult": 2,
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "value",
-                            "line": 127,
+                            "line": 125,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -306,7 +306,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onDecClicked",
-                            "line": 128,
+                            "line": 126,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -314,7 +314,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onIncClicked",
-                            "line": 129,
+                            "line": 127,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -322,7 +322,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 134,
+                            "line": 132,
                             "message": ""
                         },
                         {
@@ -330,15 +330,39 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "value",
+                            "line": 139,
+                            "message": "Cannot access value for name frigo"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "onDecClicked",
+                            "line": 140,
+                            "message": "Cannot access value for name frigo"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "onIncClicked",
                             "line": 141,
                             "message": "Cannot access value for name frigo"
                         },
                         {
                             "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "value",
+                            "line": 145,
+                            "message": "Cannot access value for name frigo"
+                        },
+                        {
+                            "codegenResult": 2,
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onDecClicked",
-                            "line": 142,
+                            "line": 146,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -346,39 +370,15 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onIncClicked",
-                            "line": 143,
-                            "message": "Cannot access value for name frigo"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "value",
                             "line": 147,
                             "message": "Cannot access value for name frigo"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 0,
-                            "functionName": "onDecClicked",
-                            "line": 148,
-                            "message": "Cannot access value for name frigo"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 0,
-                            "functionName": "onIncClicked",
-                            "line": 149,
-                            "message": "Cannot access value for name frigo"
-                        },
-                        {
-                            "codegenResult": 2,
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "value",
-                            "line": 153,
+                            "line": 151,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -386,7 +386,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onDecClicked",
-                            "line": 154,
+                            "line": 152,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -394,7 +394,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onIncClicked",
-                            "line": 155,
+                            "line": 153,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -402,7 +402,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 160,
+                            "line": 158,
                             "message": ""
                         },
                         {
@@ -410,7 +410,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "value",
-                            "line": 167,
+                            "line": 165,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -418,7 +418,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onDecClicked",
-                            "line": 168,
+                            "line": 166,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -426,7 +426,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onIncClicked",
-                            "line": 169,
+                            "line": 167,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -434,7 +434,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "value",
-                            "line": 173,
+                            "line": 171,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -442,7 +442,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onDecClicked",
-                            "line": 174,
+                            "line": 172,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -450,7 +450,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "onIncClicked",
-                            "line": 175,
+                            "line": 173,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -458,7 +458,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 181,
+                            "line": 179,
                             "message": ""
                         },
                         {
@@ -466,7 +466,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 191,
+                            "line": 189,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -474,7 +474,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 192,
+                            "line": 190,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -482,7 +482,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 195,
+                            "line": 193,
                             "message": ""
                         },
                         {
@@ -490,7 +490,7 @@
                             "column": 62,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 200,
+                            "line": 198,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -498,7 +498,7 @@
                             "column": 85,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 200,
+                            "line": 198,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -506,23 +506,23 @@
                             "column": 130,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 200,
+                            "line": 198,
                             "message": ""
                         },
                         {
-                            "codegenResult": 0,
+                            "codegenResult": 2,
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 202,
-                            "message": ""
+                            "line": 200,
+                            "message": "Cannot access value for name netmgr"
                         },
                         {
                             "codegenResult": 2,
                             "column": 44,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 203,
+                            "line": 204,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -530,39 +530,47 @@
                             "column": 67,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 203,
+                            "line": 204,
                             "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "opacity",
+                            "line": 211,
+                            "message": "Cannot access value for name netmgr"
                         },
                         {
                             "codegenResult": 2,
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 210,
-                            "message": "Cannot access value for name theme"
+                            "line": 212,
+                            "message": "Cannot access value for name netmgr"
                         },
                         {
-                            "codegenResult": 0,
+                            "codegenResult": 2,
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 213,
-                            "message": ""
+                            "line": 215,
+                            "message": "Cannot access value for name netmgr"
                         },
                         {
                             "codegenResult": 2,
                             "column": 44,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 215,
-                            "message": "Cannot access value for name theme"
+                            "line": 217,
+                            "message": "Cannot access value for name netmgr"
                         },
                         {
                             "codegenResult": 0,
                             "column": 55,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 212,
+                            "line": 214,
                             "message": ""
                         },
                         {
@@ -570,7 +578,7 @@
                             "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 214,
+                            "line": 216,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -578,23 +586,31 @@
                             "column": 95,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 214,
+                            "line": 216,
                             "message": ""
                         },
                         {
-                            "codegenResult": 0,
-                            "column": 78,
+                            "codegenResult": 2,
+                            "column": 46,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 221,
+                            "message": "Cannot access value for name netmgr"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 48,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 217,
-                            "message": ""
+                            "line": 222,
+                            "message": "Cannot access value for name netmgr"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 59,
+                            "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 217,
+                            "line": 220,
                             "message": ""
                         },
                         {
@@ -602,7 +618,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 226,
+                            "line": 232,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -610,7 +626,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 227,
+                            "line": 233,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -618,7 +634,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 230,
+                            "line": 236,
                             "message": ""
                         },
                         {
@@ -626,15 +642,15 @@
                             "column": 40,
                             "durationMicroseconds": 1000,
                             "functionName": "model",
-                            "line": 236,
-                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
+                            "line": 242,
+                            "message": "Cannot access value for name netmgr"
                         },
                         {
                             "codegenResult": 2,
                             "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 247,
+                            "line": 253,
                             "message": "Cannot access value for name modelData"
                         },
                         {
@@ -642,7 +658,7 @@
                             "column": 70,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 247,
+                            "line": 253,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -650,7 +666,7 @@
                             "column": 93,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 247,
+                            "line": 253,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -658,7 +674,7 @@
                             "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 248,
+                            "line": 254,
                             "message": "Cannot access value for name modelData"
                         },
                         {
@@ -666,7 +682,7 @@
                             "column": 70,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 248,
+                            "line": 254,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -674,7 +690,7 @@
                             "column": 93,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 248,
+                            "line": 254,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -682,239 +698,47 @@
                             "column": 138,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 248,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 261,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 262,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 101,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 264,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 54,
-                            "durationMicroseconds": 0,
-                            "functionName": "centerIn",
-                            "line": 264,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 124,
-                            "durationMicroseconds": 0,
-                            "functionName": "family",
-                            "line": 264,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 169,
-                            "durationMicroseconds": 0,
-                            "functionName": "weight",
-                            "line": 264,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 74,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 265,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 55,
-                            "durationMicroseconds": 0,
-                            "functionName": "fill",
-                            "line": 265,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 272,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 102,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 274,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 54,
-                            "durationMicroseconds": 0,
-                            "functionName": "centerIn",
-                            "line": 274,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 129,
-                            "durationMicroseconds": 0,
-                            "functionName": "family",
-                            "line": 274,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 174,
-                            "durationMicroseconds": 0,
-                            "functionName": "weight",
-                            "line": 274,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 74,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 275,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 55,
-                            "durationMicroseconds": 0,
-                            "functionName": "fill",
-                            "line": 275,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 282,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 285,
+                            "line": 254,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
                             "column": 38,
                             "durationMicroseconds": 0,
-                            "functionName": "family",
-                            "line": 283,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 291,
-                            "message": ""
+                            "functionName": "opacity",
+                            "line": 267,
+                            "message": "Cannot access value for name netmgr"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 32,
+                            "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 301,
+                            "line": 268,
                             "message": "Cannot access value for name theme"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 302,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 55,
-                            "durationMicroseconds": 0,
-                            "functionName": "height",
-                            "line": 304,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 77,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 304,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
                             "column": 43,
                             "durationMicroseconds": 0,
-                            "functionName": "fill",
-                            "line": 306,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 69,
-                            "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 309,
+                            "line": 269,
                             "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 95,
-                            "durationMicroseconds": 0,
-                            "functionName": "family",
-                            "line": 309,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 140,
-                            "durationMicroseconds": 0,
-                            "functionName": "weight",
-                            "line": 309,
-                            "message": ""
                         },
                         {
                             "codegenResult": 2,
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 312,
+                            "line": 274,
                             "message": "Cannot access value for name theme"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 43,
+                            "column": 51,
                             "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 313,
+                            "functionName": "centerIn",
+                            "line": 272,
                             "message": ""
                         },
                         {
@@ -922,7 +746,215 @@
                             "column": 63,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 312,
+                            "line": 274,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 108,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 274,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 278,
+                            "message": "Cannot access value for name netmgr"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 279,
+                            "message": "Cannot access value for name netmgr"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 47,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 277,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "opacity",
+                            "line": 286,
+                            "message": "Cannot access value for name netmgr"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 43,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 288,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 292,
+                            "message": "Cannot access value for name netmgr"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 293,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 51,
+                            "durationMicroseconds": 0,
+                            "functionName": "centerIn",
+                            "line": 291,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 67,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 293,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 112,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 293,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 297,
+                            "message": "Cannot access value for name netmgr"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 298,
+                            "message": "Cannot access value for name netmgr"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 47,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 296,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 306,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 316,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 317,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 55,
+                            "durationMicroseconds": 0,
+                            "functionName": "height",
+                            "line": 319,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 77,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 319,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 321,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 69,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 324,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 95,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 324,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 140,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 324,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 327,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 328,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 63,
+                            "durationMicroseconds": 0,
+                            "functionName": "family",
+                            "line": 327,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -930,7 +962,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 323,
+                            "line": 338,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -938,7 +970,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 325,
+                            "line": 340,
                             "message": ""
                         },
                         {
@@ -946,7 +978,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 328,
+                            "line": 343,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -954,7 +986,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 330,
+                            "line": 345,
                             "message": ""
                         },
                         {
@@ -962,7 +994,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 335,
+                            "line": 350,
                             "message": "Cannot access value for name frigo"
                         },
                         {
@@ -970,7 +1002,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 334,
+                            "line": 349,
                             "message": ""
                         },
                         {
@@ -978,7 +1010,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "model",
-                            "line": 348,
+                            "line": 363,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
                         },
                         {
@@ -986,7 +1018,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 357,
+                            "line": 372,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -994,7 +1026,7 @@
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 358,
+                            "line": 373,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -1002,7 +1034,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 361,
+                            "line": 376,
                             "message": ""
                         },
                         {
@@ -1010,7 +1042,7 @@
                             "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 364,
+                            "line": 379,
                             "message": "Cannot access value for name modelData"
                         },
                         {
@@ -1018,7 +1050,7 @@
                             "column": 70,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 364,
+                            "line": 379,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -1026,7 +1058,7 @@
                             "column": 93,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 364,
+                            "line": 379,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -1034,7 +1066,7 @@
                             "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 365,
+                            "line": 380,
                             "message": "Cannot access value for name modelData"
                         },
                         {
@@ -1042,7 +1074,7 @@
                             "column": 70,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 365,
+                            "line": 380,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -1050,7 +1082,7 @@
                             "column": 93,
                             "durationMicroseconds": 0,
                             "functionName": "family",
-                            "line": 365,
+                            "line": 380,
                             "message": "Cannot access value for name theme"
                         },
                         {
@@ -1058,7 +1090,7 @@
                             "column": 138,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 365,
+                            "line": 380,
                             "message": ""
                         }
                     ],

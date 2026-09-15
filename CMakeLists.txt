@@ -31,6 +31,8 @@ qt_add_executable(FrigoHMI
     src/errorlogmodel.cpp
     src/historystore.h
     src/historystore.cpp
+    src/networkmanager.h
+    src/networkmanager.cpp
 )
 
 # Qt's own "qt_policy" mechanism isn't a native CMake policy, so it can't be

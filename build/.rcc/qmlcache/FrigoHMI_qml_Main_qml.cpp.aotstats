@@ -56,7 +56,7 @@
                         {
                             "codegenResult": 0,
                             "column": 37,
-                            "durationMicroseconds": 0,
+                            "durationMicroseconds": 4000,
                             "functionName": "bg",
                             "line": 26,
                             "message": ""
