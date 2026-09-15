@@ -33,7 +33,10 @@ qt_add_executable(FrigoHMI
     src/historystore.cpp
 )
 
-if(POLICY QTP0004)
+# Qt's own "qt_policy" mechanism isn't a native CMake policy, so it can't be
+# guarded with if(POLICY ...) — check the Qt version directly instead.
+# QTP0004 was introduced in Qt 6.5.
+if(Qt6_VERSION VERSION_GREATER_EQUAL 6.5)
     qt_policy(SET QTP0004 NEW)
 endif()
 
@@ -74,6 +77,15 @@ set_target_properties(FrigoHMI PROPERTIES
     WIN32_EXECUTABLE ON
     MACOSX_BUNDLE ON
 )
+
+# On Linux/macOS the executable has no extension, so it would otherwise
+# collide with build/FrigoHMI/ — the directory qt_add_qml_module stages the
+# "FrigoHMI" QML module's qmldir/plugins.qmltypes into (same name as the
+# target, since the module URI matches it). Windows never hits this since
+# the .exe extension already disambiguates the two.
+if(NOT WIN32)
+    set_target_properties(FrigoHMI PROPERTIES OUTPUT_NAME "frigo-hmi")
+endif()
 
 include(GNUInstallDirs)
 install(TARGETS FrigoHMI
