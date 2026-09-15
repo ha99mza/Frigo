@@ -260,6 +260,11 @@ private:
     QTimer m_writeSpacingTimer;   // ~100ms between queued config-register writes
     bool m_writeQueueActive = false;
     bool m_pendingSignaturePush = false;
+    // Only the startup handshake reacts to a signature mismatch by pulling
+    // every register. Any 0x30F seen outside that window (e.g. the board
+    // echoing our own post-edit push) just updates configSynced for display
+    // — it never triggers a fetch-everything cycle on its own.
+    bool m_awaitingStartupSync = false;
 
     ErrorLogModel m_errorLog;
     QTimer m_connectSignatureCheckTimer; // brief delay after connecting, then verify signature

@@ -414,10 +414,15 @@ void FrigoController::handleConfigFrame(quint32 id, const QByteArray &payload)
             m_configSynced = synced;
             emit configSyncedChanged();
         }
-        // The board's signature disagrees with what we compute locally —
-        // pull every register so our copy matches what it actually holds.
-        if (!synced)
-            requestAllConfigFromBoard();
+        // Only react to a mismatch during the startup handshake. A 0x30F
+        // seen at any other time (e.g. the board echoing our own push after
+        // an edit) just updates the status above — sending already carried
+        // the new signature, so there's nothing to verify afterwards.
+        if (m_awaitingStartupSync) {
+            m_awaitingStartupSync = false;
+            if (!synced)
+                requestAllConfigFromBoard();
+        }
         return;
     }
 
@@ -467,6 +472,7 @@ void FrigoController::verifySignatureOnConnect()
 {
     if (!m_transport || !m_connected)
         return;
+    m_awaitingStartupSync = true;
     enqueueFrame(Id_CfgCommitSignature, QByteArray(), /*remoteRequest=*/true);
 
     // Not part of the signature scheme (0x30E isn't summed into it), but
