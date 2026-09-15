@@ -6,9 +6,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Quick QuickControls2 SerialBus)
+# 6.2 (LTS) is the floor because that's what ships on the target board
+# (Ubuntu 22.04 aarch64 apt package). qt_standard_project_setup() itself
+# was only added in Qt 6.3, so it's called conditionally below.
+find_package(Qt6 6.2 REQUIRED COMPONENTS Core Quick QuickControls2 SerialBus)
 
-qt_standard_project_setup(REQUIRES 6.5)
+if(COMMAND qt_standard_project_setup)
+    qt_standard_project_setup()
+endif()
 
 qt_add_executable(FrigoHMI
     src/main.cpp
@@ -28,7 +33,9 @@ qt_add_executable(FrigoHMI
     src/historystore.cpp
 )
 
-qt_policy(SET QTP0004 NEW)
+if(POLICY QTP0004)
+    qt_policy(SET QTP0004 NEW)
+endif()
 
 qt_add_qml_module(FrigoHMI
     URI FrigoHMI
