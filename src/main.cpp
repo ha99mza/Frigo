@@ -1,6 +1,7 @@
 #include "frigocontroller.h"
 
 #include <QCommandLineParser>
+#include <QDirIterator>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -51,7 +52,21 @@ int main(int argc, char *argv[])
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
     engine.loadFromModule("FrigoHMI", "Main");
 #else
-    engine.load(QUrl(QStringLiteral("qrc:/qt/qml/FrigoHMI/qml/Main.qml")));
+    // The internal qrc prefix qt_add_qml_module stages a module's QML files
+    // under has changed across Qt versions (see the QTP0001 policy), so
+    // rather than hardcode a path that only holds for one version, search
+    // the compiled-in resources for Main.qml directly.
+    {
+        QString mainQmlPath;
+        QDirIterator it(QStringLiteral(":/"), QStringList() << QStringLiteral("Main.qml"),
+                         QDir::Files, QDirIterator::Subdirectories);
+        if (it.hasNext())
+            mainQmlPath = it.next();
+        if (mainQmlPath.isEmpty()) {
+            qFatal("Could not locate Main.qml in the compiled Qt resources");
+        }
+        engine.load(QUrl(QStringLiteral("qrc") + mainQmlPath));
+    }
 #endif
 
     // Auto-connect to the CAN bus — this design has no on-screen connection
